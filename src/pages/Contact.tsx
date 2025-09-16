@@ -1,8 +1,3 @@
-/**
- * Contact Page Component
- * Contact information, social media links, and location details
- */
-
 import {
   MapPin,
   Phone,
@@ -106,6 +101,7 @@ const Contact = () => {
                 </Card>
 
                 {/* Email */}
+
                 <Card className="hover:shadow-islamic transition-smooth">
                   <CardHeader>
                     <CardTitle className="flex items-center space-x-3">
@@ -116,15 +112,21 @@ const Contact = () => {
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-foreground font-semibold">
-                      info@nagasakiislamiccenter.com
-                    </p>
+                    <a
+                      href="mailto:info@nagasakiislamiccenter.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center"
+                    >
+                      <p className="text-foreground font-semibold">
+                        info@nagasakiislamiccenter.com
+                      </p>
+                    </a>
                     <p className="text-muted-foreground text-sm">
                       We respond within 24 hours
                     </p>
                   </CardContent>
                 </Card>
-
                 {/* Office Hours */}
                 <Card className="hover:shadow-islamic transition-smooth">
                   <CardHeader>

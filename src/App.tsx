@@ -40,7 +40,7 @@ const App = () => (
             <Navbar />
             <main className="flex-1">
               <Routes>
-                <Route path="/" element={<Index />} />
+                <Route path="/Nagasaki-Mosque-Site" element={<Index />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/prayer-times" element={<PrayerTimes />} />
                 <Route path="/events" element={<Events />} />

@@ -46,7 +46,6 @@ const Gallery = () => {
           </p>
         </div>
       </section>
-
       {/* Controls Section */}
       <section className="py-8 px-4 bg-muted">
         <div className="container mx-auto max-w-6xl">
@@ -99,7 +98,6 @@ const Gallery = () => {
           </div>
         </div>
       </section>
-
       {/* Gallery Section */}
       <section className="py-16 px-4">
         <div className="container mx-auto max-w-6xl">
@@ -200,8 +198,6 @@ const Gallery = () => {
           )}
         </div>
       </section>
-
-      {/* Upload Section */}
       <section className="py-16 px-4 bg-muted">
         <div className="container mx-auto max-w-4xl text-center">
           <Card className="bg-gradient-islamic text-white">
@@ -212,9 +208,6 @@ const Gallery = () => {
                 Have photos from mosque events or community gatherings? We'd
                 love to feature them in our gallery!
               </p>
-              <Button variant="secondary" size="lg">
-                Submit Photos
-              </Button>
             </CardContent>
           </Card>
         </div>

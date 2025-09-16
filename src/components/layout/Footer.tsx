@@ -17,7 +17,7 @@ const Footer = () => {
           {/* Mosque Information */}
           <div className="space-y-4">
             <Link
-              to="/"
+              to="/Nagasaki-Mosque-Site"
               className="flex items-center space-x-3 transition-smooth hover:scale-105"
             >
               <div className="bg-gradient-islamic p-2 rounded-lg shadow-gold flex items-center justify-center">
@@ -82,12 +82,19 @@ const Footer = () => {
           {/* Contact Information */}
           <div className="space-y-4">
             <h3 className="font-bold text-lg text-secondary">Contact Info</h3>
-            <div className="space-y-3">
-              <div className="flex items-start space-x-3">
+            <div className="space-y-3 ">
+              <div className="flex items-start space-x-3 hover:text-secondary transition-smooth">
                 <MapPin className="h-5 w-5 text-secondary mt-0.5" />
                 <div>
-                  <p className="text-sm">Nagasaki City</p>
-                  <p className="text-sm text-primary-foreground/80">
+                  <a
+                    href="https://maps.app.goo.gl/YmuxvoVqAHU5x4kH7"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center"
+                  >
+                    <p className="text-sm">Nagasaki City</p>
+                  </a>
+                  <p className="text-sm text-primary-foreground/80 hover:text-secondary transition-smooth">
                     Nagasaki Prefecture, Japan
                   </p>
                 </div>
@@ -95,12 +102,21 @@ const Footer = () => {
 
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-secondary" />
-                <p className="text-sm">+(81) 070-8338-4137</p>
+                <p className="text-sm hover:text-secondary transition-smooth">
+                  +(81) 070-8338-4137
+                </p>
               </div>
 
-              <div className="flex items-center space-x-3">
+              <div className="flex items-center space-x-3 hover:text-secondary transition-smooth">
                 <Mail className="h-5 w-5 text-secondary" />
-                <p className="text-sm">info@nagasakimosque.jp</p>
+                <a
+                  href="mailto:info@nagasakiislamiccenter.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center"
+                >
+                  <p className="text-sm">info@nagasakiislamiccenter.com</p>
+                </a>
               </div>
             </div>
           </div>
