@@ -1,0 +1,416 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Background colors - Pure and clean */
+    --background: 0 0% 100%;
+    --foreground: 160 25% 15%;
+
+    /* Card components - Subtle warmth */
+    --card: 0 0% 100%;
+    --card-foreground: 160 25% 15%;
+
+    /* Popover components */
+    --popover: 0 0% 100%;
+    --popover-foreground: 160 25% 15%;
+
+    /* Primary - Deep Islamic Green */
+    --primary: 160 60% 25%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 160 45% 35%;
+
+    /* Secondary - Warm Gold */
+    --secondary: 45 85% 55%;
+    --secondary-foreground: 160 25% 15%;
+    --secondary-light: 45 65% 65%;
+
+    /* Muted colors */
+    --muted: 160 15% 95%;
+    --muted-foreground: 160 20% 45%;
+
+    /* Accent - Rich Blue */
+    --accent: 200 60% 30%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Destructive colors */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders and inputs */
+    --border: 160 25% 85%;
+    --input: 160 25% 90%;
+    --ring: 160 60% 25%;
+
+    --radius: 0.5rem;
+
+    /* Islamic Design Elements */
+    --gradient-islamic: linear-gradient(
+      135deg,
+      hsl(var(--primary)),
+      hsl(var(--primary-light))
+    );
+    --gradient-gold: linear-gradient(
+      135deg,
+      hsl(var(--secondary)),
+      hsl(var(--secondary-light))
+    );
+    --gradient-hero: linear-gradient(
+      135deg,
+      hsl(var(--primary)) 0%,
+      hsl(var(--accent)) 100%
+    );
+
+    /* Shadows with Islamic colors */
+    --shadow-islamic: 0 10px 30px -10px hsl(var(--primary) / 0.3);
+    --shadow-gold: 0 5px 20px -5px hsl(var(--secondary) / 0.4);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark theme with Islamic elegance */
+    --background: 160 30% 8%;
+    --foreground: 0 0% 95%;
+
+    --card: 160 25% 12%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 160 25% 12%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 160 45% 40%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 160 35% 50%;
+
+    --secondary: 45 75% 50%;
+    --secondary-foreground: 160 30% 8%;
+    --secondary-light: 45 55% 60%;
+
+    --muted: 160 20% 18%;
+    --muted-foreground: 160 15% 65%;
+
+    --accent: 200 50% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 160 20% 20%;
+    --input: 160 20% 22%;
+    --ring: 160 45% 40%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+/* Islamic Design Components */
+@layer components {
+  /* Gradient backgrounds */
+  .bg-gradient-islamic {
+    background: var(--gradient-islamic);
+  }
+
+  .bg-gradient-gold {
+    background: var(--gradient-gold);
+  }
+
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  /* Islamic shadows */
+  .shadow-islamic {
+    box-shadow: var(--shadow-islamic);
+  }
+
+  .shadow-gold {
+    box-shadow: var(--shadow-gold);
+  }
+
+  /* Smooth transitions */
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  /* Islamic geometric pattern overlay */
+  .pattern-islamic::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(
+        circle at 25% 25%,
+        hsl(var(--secondary) / 0.1) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 75% 75%,
+        hsl(var(--primary) / 0.1) 0%,
+        transparent 50%
+      );
+    pointer-events: none;
+  }
+}
+
+/* Advanced Islamic animations and interactions */
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out;
+  }
+
+  .animate-slide-in-left {
+    animation: slideInLeft 0.8s ease-out;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.8s ease-out;
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulseSlow 3s ease-in-out infinite;
+  }
+
+  .animate-bounce-gentle {
+    animation: bounceGentle 2s ease-in-out infinite;
+  }
+
+  .animate-scale-hover {
+    transition: transform 0.3s ease;
+  }
+
+  .animate-scale-hover:hover {
+    transform: scale(1.05);
+  }
+
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradientShift 4s ease infinite;
+  }
+
+  .animate-text-glow {
+    animation: textGlow 2s ease-in-out infinite alternate;
+  }
+
+  /* Interactive hover effects */
+  .hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px -10px hsl(var(--primary) / 0.3);
+  }
+
+  .hover-glow {
+    transition: box-shadow 0.3s ease;
+  }
+
+  .hover-glow:hover {
+    box-shadow: 0 0 30px hsl(var(--primary) / 0.4);
+  }
+
+  .hover-rotate {
+    transition: transform 0.3s ease;
+  }
+
+  .hover-rotate:hover {
+    transform: rotate(5deg);
+  }
+
+  .hover-slide {
+    transition: transform 0.3s ease;
+  }
+
+  .hover-slide:hover {
+    transform: translateX(10px);
+  }
+
+  /* Interactive card effects */
+  .card-interactive {
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .card-interactive:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 35px -5px hsl(var(--primary) / 0.25);
+  }
+
+  /* Special effects */
+  .text-shimmer {
+    background: linear-gradient(
+      90deg,
+      hsl(var(--primary)),
+      hsl(var(--secondary)),
+      hsl(var(--primary))
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 2s linear infinite;
+  }
+
+  .parallax-slow {
+    transition: transform 0.1s ease-out;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulseSlow {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes bounceGentle {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 5px hsl(var(--secondary) / 0.5);
+  }
+  to {
+    box-shadow: 0 0 20px hsl(var(--secondary) / 0.8);
+  }
+}
+
+@keyframes textGlow {
+  from {
+    text-shadow: 0 0 10px hsl(var(--primary) / 0.5);
+  }
+  to {
+    text-shadow: 0 0 20px hsl(var(--primary) / 0.8);
+  }
+}
+
+@keyframes shimmer {
+  to {
+    background-position: 200% center;
+  }
+}
