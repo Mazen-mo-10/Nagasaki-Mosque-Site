@@ -112,7 +112,7 @@ const Gallery = () => {
           {/* Grid View */}
           {viewMode === "grid" && (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredImages.map((image, index) => (
+              {filteredImages.map((item, index) => (
                 <Card
                   key={index}
                   className="group hover:shadow-islamic transition-smooth animate-fade-in overflow-hidden"
@@ -120,26 +120,46 @@ const Gallery = () => {
                 >
                   <div className="relative">
                     <img
-                      src={image.src}
-                      alt={image.title}
+                      src={item.src}
+                      alt={item.title}
                       className="w-full h-48 object-cover group-hover:scale-105 transition-smooth"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-smooth" />
+
+                    {item.videoUrl && (
+                      <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-smooth">
+                        <a
+                          href={item.videoUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center space-x-2 bg-red-600 text-white px-4 py-2 rounded-full shadow-lg hover:bg-red-700 transition-smooth"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-6 w-6"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path d="M23.498 6.186a2.979 2.979 0 0 0-2.1-2.11C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.398.576a2.979 2.979 0 0 0-2.1 2.11C0 8.095 0 12 0 12s0 3.905.502 5.814a2.979 2.979 0 0 0 2.1 2.11C4.495 20.5 12 20.5 12 20.5s7.505 0 9.398-.576a2.979 2.979 0 0 0 2.1-2.11C24 15.905 24 12 24 12s0-3.905-.502-5.814ZM9.75 15.02V8.98L15.5 12l-5.75 3.02Z" />
+                          </svg>
+                          <span>Watch</span>
+                        </a>
+                      </div>
+                    )}
+
                     <div className="absolute bottom-2 right-2">
                       <Badge variant="secondary" className="text-xs">
-                        {image.category}
+                        {item.category}
                       </Badge>
                     </div>
                   </div>
+
                   <CardContent className="p-4">
-                    <h3 className="font-semibold text-lg mb-2">
-                      {image.title}
-                    </h3>
+                    <h3 className="font-semibold text-lg mb-2">{item.title}</h3>
                     <p className="text-sm text-muted-foreground">
-                      {image.description}
+                      {item.description}
                     </p>
                     <p className="text-xs text-muted-foreground mt-2">
-                      {image.date}
+                      {item.date}
                     </p>
                   </CardContent>
                 </Card>
@@ -219,6 +239,36 @@ const Gallery = () => {
 // Gallery Images Data (In a real app, this would come from a database)
 const galleryImages = [
   {
+    src: "https://img.youtube.com/vi/0U83nfBXTVI/hqdefault.jpg",
+    title: "Inspiring Talk with New Japanese Muslims",
+    description:
+      "A touching meeting with new Japanese Muslims sharing their journey at Nagasaki Mosque.",
+    category: "videos",
+    date: "2025",
+    videoUrl: "https://youtu.be/0U83nfBXTVI?si=lyUZZEWJHqLxF6-E",
+  },
+  {
+    src: "https://img.youtube.com/vi/K047EPySyMA/hqdefault.jpg",
+    title:
+      "Visit of the Kuwaiti Humanitarian Association Delegation to Nagasaki Central Mosque - Japan",
+
+    description:
+      "Meeting with the Kuwaiti Humanitarian Association delegation at Nagasaki Central Mosque.",
+    category: "events",
+    date: "2025",
+    videoUrl: "https://youtu.be/K047EPySyMA",
+  },
+  {
+    src: "https://github.com/Mazen-mo-10/imgs/blob/main/insta-kuwait-visit.jpg?raw=true", // لقطة شاشة أو صورة رمزية للريل
+    title: "Visit of the Kuwaiti Humanitarian Association Delegation",
+    description:
+      "A special visit by the Kuwaiti Humanitarian Association delegation to Nagasaki Central Mosque in Japan.",
+    category: "videos",
+    date: "2025",
+    videoUrl:
+      "https://www.instagram.com/reel/DIitGgzt2hu/?igsh=MWx2eGF4Mmw1cTBkaA==",
+  },
+  {
     src: "https://github.com/Mazen-mo-10/imgs/blob/main/pic1.jpg?raw=true",
     title: "Kuwait Society visit to the mosque",
     description:
@@ -264,6 +314,30 @@ const galleryImages = [
       "Honored gathering with a respected Sheikh and distinguished guests at the mosque.",
     category: "prayers",
     date: "January 2024",
+  },
+  {
+    src: "https://github.com/Mazen-mo-10/Nagasaki-Mosque-Site/blob/main/src/assets/PicTM.png?raw=true",
+    title: "Grand Celebration",
+    description:
+      "A major festive gathering at Nagasaki Mosque with international guests and visitors from outside the city.",
+    category: "celebrations",
+    date: "2024",
+  },
+  {
+    src: "https://github.com/Mazen-mo-10/Nagasaki-Mosque-Site/blob/main/src/assets/PicYE.png?raw=true",
+    title: "Cultural Food Festival",
+    description:
+      "A vibrant food gathering at Nagasaki Mosque showcasing dishes from diverse cultures and traditions.",
+    category: "community",
+    date: "2024",
+  },
+  {
+    src: "https://github.com/Mazen-mo-10/Nagasaki-Mosque-Site/blob/main/src/assets/twoSandH.jpg?raw=true",
+    title: "Young Visitors in Hijab",
+    description:
+      "Two young girls wearing hijab experiencing the beauty of Japanese Muslim traditions at Nagasaki Mosque.",
+    category: "culture",
+    date: "2024",
   },
 ];
 
