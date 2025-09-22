@@ -129,23 +129,23 @@ const Footer = () => {
             <div className="space-y-2">
               <div className="flex justify-between items-center text-sm">
                 <span>Fajr</span>
-                <span className="text-secondary">5:30 AM</span>
+                <span className="text-secondary">4:42</span>
               </div>
               <div className="flex justify-between items-center text-sm">
                 <span>Dhuhr</span>
-                <span className="text-secondary">12:15 PM</span>
+                <span className="text-secondary">12:15</span>
               </div>
               <div className="flex justify-between items-center text-sm">
                 <span>Asr</span>
-                <span className="text-secondary">3:45 PM</span>
+                <span className="text-secondary">15:45</span>
               </div>
               <div className="flex justify-between items-center text-sm">
                 <span>Maghrib</span>
-                <span className="text-secondary">6:20 PM</span>
+                <span className="text-secondary">18:25 </span>
               </div>
               <div className="flex justify-between items-center text-sm">
                 <span>Isha</span>
-                <span className="text-secondary">8:00 PM</span>
+                <span className="text-secondary">19:43</span>
               </div>
             </div>
           </div>

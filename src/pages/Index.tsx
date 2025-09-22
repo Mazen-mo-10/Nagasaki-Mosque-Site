@@ -139,7 +139,7 @@ const Index = () => {
                           <Users className="h-6 w-6 text-primary animate-pulse-slow" />
                         </div>
                         <div className="text-2xl font-bold text-primary">
-                          100+
+                          300+
                         </div>
                         <div className="text-sm text-muted-foreground">
                           Active Members

@@ -1,12 +1,13 @@
-/**
- * Prayer Times Page Component
- * Detailed prayer schedule and Islamic calendar information
- */
-
-import { Clock, Calendar, MapPin, Compass } from 'lucide-react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { getPrayerTimes, getNextPrayer } from '@/utils/prayerTimes';
+import { Clock, Calendar, MapPin, Compass } from "lucide-react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { getPrayerTimes, getNextPrayer } from "@/utils/prayerTimes";
 
 const PrayerTimes = () => {
   const prayerTimes = getPrayerTimes();
@@ -14,7 +15,6 @@ const PrayerTimes = () => {
 
   return (
     <div className="min-h-screen">
-      
       {/* Hero Section */}
       <section className="bg-gradient-islamic text-white py-20 px-4 pattern-islamic">
         <div className="container mx-auto text-center space-y-6 relative z-10">
@@ -34,11 +34,12 @@ const PrayerTimes = () => {
       {/* Main Content */}
       <section className="py-16 px-4">
         <div className="container mx-auto max-w-4xl space-y-12">
-          
           {/* Current Date and Next Prayer */}
           <div className="text-center space-y-6 animate-fade-in">
             <div className="bg-muted p-6 rounded-lg">
-              <h2 className="text-2xl font-bold text-foreground mb-2">{prayerTimes.date}</h2>
+              <h2 className="text-2xl font-bold text-foreground mb-2">
+                {prayerTimes.date}
+              </h2>
               {nextPrayer && (
                 <div className="flex items-center justify-center space-x-4">
                   <Badge variant="secondary" className="text-lg px-4 py-2">
@@ -52,34 +53,40 @@ const PrayerTimes = () => {
           {/* Prayer Times Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {prayerTimes.prayers.map((prayer, index) => (
-              <Card 
-                key={prayer.name} 
+              <Card
+                key={prayer.name}
                 className={`hover:shadow-islamic transition-smooth animate-fade-in ${
-                  nextPrayer?.name === prayer.name 
-                    ? 'ring-2 ring-primary bg-primary/5' 
-                    : ''
+                  nextPrayer?.name === prayer.name
+                    ? "ring-2 ring-primary bg-primary/5"
+                    : ""
                 }`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <CardHeader className="text-center">
                   <div className="mx-auto mb-3">
-                    <div className={`p-3 rounded-full ${
-                      nextPrayer?.name === prayer.name 
-                        ? 'bg-primary text-white' 
-                        : 'bg-primary/10 text-primary'
-                    }`}>
+                    <div
+                      className={`p-3 rounded-full ${
+                        nextPrayer?.name === prayer.name
+                          ? "bg-primary text-white"
+                          : "bg-primary/10 text-primary"
+                      }`}
+                    >
                       <Clock className="h-6 w-6" />
                     </div>
                   </div>
                   <CardTitle className="text-xl">{prayer.name}</CardTitle>
-                  <CardDescription className="text-lg font-arabic">{prayer.arabic}</CardDescription>
+                  <CardDescription className="text-lg font-arabic">
+                    {prayer.arabic}
+                  </CardDescription>
                 </CardHeader>
                 <CardContent className="text-center">
-                  <div className={`text-3xl font-bold ${
-                    nextPrayer?.name === prayer.name 
-                      ? 'text-primary animate-glow' 
-                      : 'text-foreground'
-                  }`}>
+                  <div
+                    className={`text-3xl font-bold ${
+                      nextPrayer?.name === prayer.name
+                        ? "text-primary animate-glow"
+                        : "text-foreground"
+                    }`}
+                  >
                     {prayer.time}
                   </div>
                 </CardContent>
@@ -89,7 +96,6 @@ const PrayerTimes = () => {
 
           {/* Information Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
-            
             {/* Qibla Direction */}
             <Card className="bg-gradient-to-br from-accent/10 to-primary/10">
               <CardHeader>
@@ -104,7 +110,9 @@ const PrayerTimes = () => {
                 </p>
                 <div className="text-center">
                   <div className="text-4xl font-bold text-accent">292°</div>
-                  <p className="text-sm text-muted-foreground">West-Northwest</p>
+                  <p className="text-sm text-muted-foreground">
+                    West-Northwest
+                  </p>
                 </div>
               </CardContent>
             </Card>
@@ -121,23 +129,33 @@ const PrayerTimes = () => {
                 <div className="space-y-3">
                   <div className="flex justify-between items-center">
                     <span className="text-sm">Fajr</span>
-                    <span className="text-xs text-muted-foreground">Before sunrise</span>
+                    <span className="text-xs text-muted-foreground">
+                      Before sunrise
+                    </span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-sm">Dhuhr</span>
-                    <span className="text-xs text-muted-foreground">After midday</span>
+                    <span className="text-xs text-muted-foreground">
+                      After midday
+                    </span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-sm">Asr</span>
-                    <span className="text-xs text-muted-foreground">Late afternoon</span>
+                    <span className="text-xs text-muted-foreground">
+                      Late afternoon
+                    </span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-sm">Maghrib</span>
-                    <span className="text-xs text-muted-foreground">After sunset</span>
+                    <span className="text-xs text-muted-foreground">
+                      After sunset
+                    </span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-sm">Isha</span>
-                    <span className="text-xs text-muted-foreground">Night prayer</span>
+                    <span className="text-xs text-muted-foreground">
+                      Night prayer
+                    </span>
                   </div>
                 </div>
               </CardContent>
@@ -148,8 +166,9 @@ const PrayerTimes = () => {
           <Card className="bg-gradient-islamic text-white">
             <CardContent className="text-center p-8">
               <p className="text-lg italic mb-4">
-                "And establish prayer at the two ends of the day and at the approach of the night. 
-                Indeed, good deeds do away with misdeeds."
+                "And establish prayer at the two ends of the day and at the
+                approach of the night. Indeed, good deeds do away with
+                misdeeds."
               </p>
               <p className="text-secondary font-semibold">- Quran 11:114</p>
             </CardContent>

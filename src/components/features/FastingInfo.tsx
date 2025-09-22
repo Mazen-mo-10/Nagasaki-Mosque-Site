@@ -1,32 +1,39 @@
-/**
- * Fasting Information Component
- * Displays current fasting status, upcoming fasting days, and related information
- */
-
-import { Calendar, Moon, Sun, Clock, Star } from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Separator } from '@/components/ui/separator';
-import { getIslamicInfo } from '@/utils/hijriDate';
+import { Calendar, Moon, Sun, Clock, Star } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Separator } from "@/components/ui/separator";
+import { getIslamicInfo } from "@/utils/hijriDate"; // تأكد من المسار الصحيح
+import { useEffect, useState } from "react";
 
 interface FastingDay {
   name: string;
   date: string;
-  type: 'obligatory' | 'recommended' | 'special';
+  type: "obligatory" | "recommended" | "special";
   description: string;
   arabicName: string;
 }
 
 const FastingInfo = () => {
-  const { hijri, isRamadan } = getIslamicInfo();
-  
-  // Get current date information for fasting
+  const [islamicInfo, setIslamicInfo] = useState<Awaited<
+    ReturnType<typeof getIslamicInfo>
+  > | null>(null);
+
+  useEffect(() => {
+    getIslamicInfo().then(setIslamicInfo);
+  }, []);
+
+  // Use optional chaining or fallback values
+  const hijri = islamicInfo?.hijri;
+  const isRamadan = islamicInfo?.isRamadan ?? false;
+
+  // Calculate if today is Monday or Thursday (Gregorian weekday)
   const today = new Date();
-  const dayOfWeek = today.getDay();
-  const isMonday = dayOfWeek === 1;
-  const isThursday = dayOfWeek === 4;
-  const dayOfMonth = today.getDate();
-  const isWhiteDay = [13, 14, 15].includes(dayOfMonth);
+  const weekday = today.toLocaleString("en-US", { weekday: "long" });
+  const isMonday = weekday === "Monday";
+  const isThursday = weekday === "Thursday";
+
+  // Calculate if today is a White Day (13th, 14th, or 15th of Hijri month)
+  const isWhiteDay = hijri && [13, 14, 15].includes(Number(hijri.day));
 
   // Upcoming fasting days (example data)
   const upcomingFastingDays: FastingDay[] = [
@@ -35,22 +42,22 @@ const FastingInfo = () => {
       date: "9th Dhu al-Hijjah",
       type: "recommended",
       description: "One of the most blessed days of the year",
-      arabicName: "يوم عرفة"
+      arabicName: "يوم عرفة",
     },
     {
       name: "Day of Ashura",
       date: "10th Muharram",
-      type: "recommended", 
+      type: "recommended",
       description: "Commemorating the salvation of Moses and the Israelites",
-      arabicName: "يوم عاشوراء"
+      arabicName: "يوم عاشوراء",
     },
     {
       name: "White Days",
       date: "13th, 14th, 15th of every lunar month",
       type: "recommended",
       description: "Three blessed days of each Islamic month",
-      arabicName: "الأيام البيض"
-    }
+      arabicName: "الأيام البيض",
+    },
   ];
 
   const getCurrentFastingStatus = () => {
@@ -59,28 +66,30 @@ const FastingInfo = () => {
         status: "Ramadan Fasting",
         description: "Obligatory fasting month",
         color: "primary",
-        icon: Moon
+        icon: Moon,
       };
     } else if (isMonday || isThursday) {
       return {
         status: "Sunnah Fasting Day",
-        description: `Prophet's recommended fasting on ${isMonday ? 'Monday' : 'Thursday'}`,
+        description: `Prophet's recommended fasting on ${
+          isMonday ? "Monday" : "Thursday"
+        }`,
         color: "secondary",
-        icon: Sun
+        icon: Sun,
       };
     } else if (isWhiteDay) {
       return {
         status: "White Days",
         description: "Recommended fasting on the 13th, 14th, or 15th",
         color: "accent",
-        icon: Star
+        icon: Star,
       };
     } else {
       return {
         status: "Regular Day",
         description: "No special fasting today",
         color: "muted",
-        icon: Calendar
+        icon: Calendar,
       };
     }
   };
@@ -98,17 +107,21 @@ const FastingInfo = () => {
           <span>Fasting Information</span>
         </CardTitle>
       </CardHeader>
-      
+
       <CardContent className="space-y-6">
         {/* Current Fasting Status */}
         <div className="space-y-4">
           <h4 className="font-medium text-foreground">Today's Status</h4>
-          
-          <Card className={`bg-${currentStatus.color}/5 border-${currentStatus.color}/20`}>
+
+          <Card
+            className={`bg-${currentStatus.color}/5 border-${currentStatus.color}/20`}
+          >
             <CardContent className="p-4">
               <div className="flex items-center space-x-3">
                 <div className={`bg-${currentStatus.color}/10 p-2 rounded-lg`}>
-                  <StatusIcon className={`h-5 w-5 text-${currentStatus.color}`} />
+                  <StatusIcon
+                    className={`h-5 w-5 text-${currentStatus.color}`}
+                  />
                 </div>
                 <div className="flex-1">
                   <div className="flex items-center space-x-2">
@@ -116,11 +129,11 @@ const FastingInfo = () => {
                       {currentStatus.status}
                     </span>
                     {(isRamadan || isMonday || isThursday || isWhiteDay) && (
-                      <Badge 
-                        variant="secondary" 
+                      <Badge
+                        variant="secondary"
                         className="text-xs animate-pulse-slow"
                       >
-                        {isRamadan ? 'Obligatory' : 'Recommended'}
+                        {isRamadan ? "Obligatory" : "Recommended"}
                       </Badge>
                     )}
                   </div>
@@ -139,7 +152,7 @@ const FastingInfo = () => {
         {(isRamadan || isMonday || isThursday || isWhiteDay) && (
           <div className="space-y-4">
             <h4 className="font-medium text-foreground">Fasting Times</h4>
-            
+
             <div className="grid grid-cols-2 gap-3">
               <Card className="bg-muted/30">
                 <CardContent className="p-3 text-center">
@@ -147,11 +160,11 @@ const FastingInfo = () => {
                     <Sun className="h-4 w-4 text-orange-500" />
                     <span className="text-sm font-medium">Suhur Ends</span>
                   </div>
-                  <div className="text-lg font-bold text-primary">5:30 AM</div>
+                  <div className="text-lg font-bold text-primary">4:42</div>
                   <div className="text-xs text-muted-foreground">Fajr Time</div>
                 </CardContent>
               </Card>
-              
+
               <Card className="bg-muted/30">
                 <CardContent className="p-3 text-center">
                   <div className="flex items-center justify-center space-x-2 mb-1">
@@ -159,7 +172,9 @@ const FastingInfo = () => {
                     <span className="text-sm font-medium">Iftar Time</span>
                   </div>
                   <div className="text-lg font-bold text-primary">6:20 PM</div>
-                  <div className="text-xs text-muted-foreground">Maghrib Time</div>
+                  <div className="text-xs text-muted-foreground">
+                    Maghrib Time
+                  </div>
                 </CardContent>
               </Card>
             </div>
@@ -171,17 +186,24 @@ const FastingInfo = () => {
         {/* Upcoming Special Fasting Days */}
         <div className="space-y-4">
           <h4 className="font-medium text-foreground">Upcoming Special Days</h4>
-          
+
           <div className="space-y-3">
             {upcomingFastingDays.map((day, index) => (
-              <Card key={index} className="hover-glow transition-all duration-300">
+              <Card
+                key={index}
+                className="hover-glow transition-all duration-300"
+              >
                 <CardContent className="p-4">
                   <div className="flex items-start justify-between">
                     <div className="space-y-1 flex-1">
                       <div className="flex items-center space-x-2">
-                        <span className="font-medium text-foreground">{day.name}</span>
-                        <Badge 
-                          variant={day.type === 'obligatory' ? 'default' : 'secondary'}
+                        <span className="font-medium text-foreground">
+                          {day.name}
+                        </span>
+                        <Badge
+                          variant={
+                            day.type === "obligatory" ? "default" : "secondary"
+                          }
                           className="text-xs"
                         >
                           {day.type}
@@ -214,9 +236,10 @@ const FastingInfo = () => {
                 Fasting Etiquette Reminder
               </p>
               <p className="text-xs text-muted-foreground leading-relaxed">
-                Remember to have the intention (niyyah) for fasting before Fajr, 
-                eat suhur (pre-dawn meal), break fast at Maghrib time, and increase 
-                in dhikr, Quran recitation, and charitable acts during fasting days.
+                Remember to have the intention (niyyah) for fasting before Fajr,
+                eat suhur (pre-dawn meal), break fast at Maghrib time, and
+                increase in dhikr, Quran recitation, and charitable acts during
+                fasting days.
               </p>
             </div>
           </div>

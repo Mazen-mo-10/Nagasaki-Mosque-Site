@@ -220,22 +220,22 @@ const Gallery = () => {
 const galleryImages = [
   {
     src: "https://github.com/Mazen-mo-10/imgs/blob/main/pic1.jpg?raw=true",
-    title: "Prayer Time at Nagasaki Mosque",
+    title: "Kuwait Society visit to the mosque",
     description:
-      "Community members gathering for daily prayers in our main prayer hall",
+      "A delegation from the Kuwaiti Society visited our mosque and were impressed by the development in this period.",
     category: "prayers",
     date: "March 2024",
   },
   {
     src: "https://github.com/Mazen-mo-10/imgs/blob/main/pic2.JPG?raw=true",
-    title: "Eid Celebration 2025",
+    title: "Community Gathering at the Mosque",
     description:
-      "Joyous Eid al-Fitr celebration with traditional food and community bonding",
+      "A special day where mosque members come together for prayer, discussions, and strengthening brotherhood.",
     category: "celebrations",
-    date: "April 2025",
+    date: "April 2024",
   },
   {
-    src: "https://github.com/Mazen-mo-10/imgs/blob/main/pic3.JPG?raw=true",
+    src: "https://github.com/Mazen-mo-10/Nagasaki-Mosque-Site/blob/main/src/assets/Picture%202.jpg?raw=true",
     title: "Mosque Architecture",
     description: "Beautiful Islamic architectural details of our prayer hall",
     category: "architecture",
@@ -243,24 +243,27 @@ const galleryImages = [
   },
   {
     src: "https://github.com/Mazen-mo-10/imgs/blob/main/pic4.JPG?raw=true",
-    title: "Youth Education Program",
-    description: "Young Muslims learning Arabic and Islamic studies",
+    title: "Community Iftar Gathering",
+    description:
+      "Mosque members sharing a blessed iftar meal together during Ramadan.",
     category: "community",
     date: "January 2024",
   },
   {
     src: "https://github.com/Mazen-mo-10/imgs/blob/main/pic5.JPG?raw=true",
-    title: "Iftar Gathering",
-    description: "Community coming together to break fast during Ramadan",
+    title: "Mosque Gathering",
+    description:
+      "Community members gathering inside the mosque and capturing a memorable group photo together.",
     category: "events",
     date: "March 2024",
   },
   {
     src: "https://github.com/Mazen-mo-10/imgs/blob/main/pic6.jpeg?raw=true",
-    title: "Friday Congregation",
-    description: "Weekly Jumu'ah prayers with the community",
+    title: "Special Visit",
+    description:
+      "Honored gathering with a respected Sheikh and distinguished guests at the mosque.",
     category: "prayers",
-    date: "Every Friday",
+    date: "January 2024",
   },
 ];
 

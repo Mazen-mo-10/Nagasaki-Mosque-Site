@@ -1,8 +1,3 @@
-/**
- * Enhanced About Page Component for Nagasaki Mosque
- * Features: Mosque history, embedded video, Islamic resources, Hijri calendar, fasting info, and community features
- */
-
 import {
   Play,
   Heart,
@@ -33,8 +28,22 @@ import HijriCalendar from "@/components/features/HijriCalendar";
 import FastingInfo from "@/components/features/FastingInfo";
 import AzkarSection from "@/components/features/AzkarSection";
 import IslamicResources from "@/components/features/IslamicResources";
+import { useEffect, useState } from "react";
+import { getIslamicInfo } from "@/utils/hijriDate";
+
+type IslamicInfo = Awaited<ReturnType<typeof getIslamicInfo>>;
 
 const About = () => {
+  const [islamicInfo, setIslamicInfo] = useState<IslamicInfo | null>(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const info = await getIslamicInfo();
+      setIslamicInfo(info);
+    };
+    fetchData();
+  }, []);
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -75,13 +84,13 @@ const About = () => {
                 </p>
 
                 <div className="grid grid-cols-2 gap-4">
-                  <div className="text-center p-4 bg-primary/5 rounded-lg">
+                  <div className="text-center p-4 bg-primary/5 rounded-lg hover-lift card-interactive">
                     <Users className="h-8 w-8 text-primary mx-auto mb-2" />
                     <span className="font-semibold text-foreground">
                       Active Community
                     </span>
                   </div>
-                  <div className="text-center p-4 bg-secondary/5 rounded-lg">
+                  <div className="text-center p-4 bg-secondary/5 rounded-lg hover-lift card-interactive">
                     <Heart className="h-8 w-8 text-secondary mx-auto mb-2" />
                     <span className="font-semibold text-foreground">
                       Inclusive Welcome
@@ -104,24 +113,30 @@ const About = () => {
                 </div>
 
                 {/* Video Info Card */}
-                <Card className="bg-gradient-gold hover-glow">
-                  <CardContent className="p-6">
-                    <div className="flex items-center space-x-4">
-                      <div className="bg-white/20 p-3 rounded-lg">
-                        <Play className="h-6 w-6 text-white" />
+                <a
+                  href="https://www.youtube.com/@NagasakiIslamicCenter"
+                  target="_blank"
+                  className="inline-flex items-center"
+                >
+                  <Card className="bg-gradient-gold hover-glow">
+                    <CardContent className="p-6">
+                      <div className="flex items-center space-x-4">
+                        <div className="bg-white/20 p-3 rounded-lg">
+                          <Play className="h-6 w-6 text-white" />
+                        </div>
+                        <div className="text-white">
+                          <h3 className="text-xl font-bold">
+                            Experience Our Community
+                          </h3>
+                          <p className="text-white/90 text-sm">
+                            Discover the spiritual atmosphere and brotherhood at
+                            Nagasaki Mosque
+                          </p>
+                        </div>
                       </div>
-                      <div className="text-white">
-                        <h3 className="text-xl font-bold">
-                          Experience Our Community
-                        </h3>
-                        <p className="text-white/90 text-sm">
-                          Discover the spiritual atmosphere and brotherhood at
-                          Nagasaki Mosque
-                        </p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                    </CardContent>
+                  </Card>
+                </a>
               </div>
             </div>
           </div>
@@ -185,12 +200,19 @@ const About = () => {
                         Dhul-Qa'dah, Dhul-Hijjah, Muharram, Rajab
                       </span>
                     </div>
-                    <div className="flex justify-between items-center">
-                      <span className="font-medium">Next Occasion:</span>
-                      <span className="text-sm text-muted-foreground">
-                        Eid al-Fitr: 5 days
-                      </span>
-                    </div>
+                    {islamicInfo?.upcomingEvent ? (
+                      <div className="flex justify-between items-center">
+                        <span className="font-medium">Next Occasion:</span>
+                        <span className="text-sm text-muted-foreground">
+                          {islamicInfo.upcomingEvent.name}:{" "}
+                          {islamicInfo.upcomingEvent.inDays} days
+                        </span>
+                      </div>
+                    ) : (
+                      <div className="text-sm text-muted-foreground">
+                        Loading events...
+                      </div>
+                    )}
                   </div>
                 </CardContent>
               </Card>
@@ -374,32 +396,49 @@ const islamicTips = [
 // Important Duas Data
 const importantDuas = [
   {
-    title: "Opening Supplication (Al-Fatihah)",
-    arabic:
-      "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ * الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ",
-    transliteration:
-      "Bismillahi'r-Rahmani'r-Rahim. Alhamdu lillahi rabbil alameen.",
+    title: "دعاء إبراهيم وإسماعيل ببناء الكعبة",
+    arabic: "رَبَّنَا تَقَبَّلْ مِنَّا إِنَّكَ أَنتَ السَّمِيعُ الْعَلِيمُ",
+    transliteration: "Rabbana taqabbal minna innaka anta as-sami‘u al-‘alim.",
     translation:
-      "In the name of Allah, the Most Gracious, the Most Merciful. All praise is due to Allah, Lord of all the worlds.",
-    when: "Beginning of every prayer and before important tasks",
+      "Our Lord, accept [this] from us. Indeed, You are the Hearing, the Knowing. (Quran 2:127)",
+    when: "عند القيام بالأعمال الصالحة وطلب قبولها من الله.",
   },
   {
-    title: "Seeking Forgiveness",
+    title: "دعاء موسى عليه السلام",
     arabic:
-      "أَسْتَغْفِرُ اللَّهَ الَّذِي لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ وَأَتُوبُ إِلَيْهِ",
+      "رَبِّ اشْرَحْ لِي صَدْرِي • وَيَسِّرْ لِي أَمْرِي • وَاحْلُلْ عُقْدَةً مِّن لِّسَانِي • يَفْقَهُوا قَوْلِي",
     transliteration:
-      "Astaghfirullaha'l-ladhi la ilaha illa huwa'l-hayyu'l-qayyumu wa atubu ilayh.",
+      "Rabbi ishrah li sadri, wa yassir li amri, wahlul ‘uqdatan min lisani, yafqahu qawli.",
     translation:
-      "I seek forgiveness from Allah, besides whom there is no god, the Living, the Sustainer, and I repent to Him.",
-    when: "When seeking Allah's forgiveness for sins",
+      "My Lord, expand for me my breast, ease for me my task, and untie the knot from my tongue, that they may understand my speech. (Quran 20:25-28)",
+    when: "عند مواجهة الصعوبات أو الحاجة للفصاحة والوضوح.",
   },
   {
-    title: "Protection from Evil",
-    arabic: "أَعُوذُ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ",
-    transliteration: "A'udhu billahi mina'sh-shaytani'r-rajim.",
-    translation: "I seek refuge in Allah from Satan, the accursed.",
-    when: "Before reciting Quran and when feeling negative thoughts",
+    title: "دعاء نوح عليه السلام",
+    arabic:
+      "رَبِّ اغْفِرْ لِي وَلِوَالِدَيَّ وَلِمَن دَخَلَ بَيْتِيَ مُؤْمِنًا وَلِلْمُؤْمِنِينَ وَالْمُؤْمِنَاتِ",
+    transliteration:
+      "Rabbi ighfir li wa liwalidayya wa liman dakhala baytiya mu’minan walilmu’minina walmu’minat.",
+    translation:
+      "My Lord, forgive me and my parents and whoever enters my house a believer and the believing men and believing women. (Quran 71:28)",
+    when: "للدعاء بالمغفرة للنفس، الوالدين، وجميع المؤمنين.",
+  },
+  {
+    title: "دعاء أيوب عليه السلام",
+    arabic: "رَبِّ إِنِّي مَسَّنِيَ الضُّرُّ وَأَنتَ أَرْحَمُ الرَّاحِمِينَ",
+    transliteration: "Rabbi inni massaniya ad-durru wa anta arhamur-rahimin.",
+    translation:
+      "My Lord, indeed adversity has touched me, and You are the Most Merciful of the merciful. (Quran 21:83)",
+    when: "عند الشدة والمرض والابتلاء.",
+  },
+  {
+    title: "دعاء يونس عليه السلام",
+    arabic:
+      "لَّا إِلَٰهَ إِلَّا أَنتَ سُبْحَانَكَ إِنِّي كُنتُ مِنَ الظَّالِمِينَ",
+    transliteration: "La ilaha illa anta subhanaka inni kuntu minaz-zalimin.",
+    translation:
+      "There is no deity except You; exalted are You. Indeed, I have been of the wrongdoers. (Quran 21:87)",
+    when: "عند الضيق، التوبة، وطلب النجاة من الكرب.",
   },
 ];
-
 export default About;

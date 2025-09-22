@@ -1,81 +1,60 @@
-/**
- * Hijri Date Utilities for Nagasaki Mosque
- * Converts Gregorian dates to Islamic (Hijri) calendar
- */
+import { islamicEvents } from "./islamicEvents";
 
-export interface HijriDate {
-  day: number;
-  month: string;
-  year: number;
-  weekday: string;
-  gregorianDate: string;
-}
+export async function getIslamicInfo() {
+  const today = new Date();
+  const dateStr = today.toLocaleDateString("en-GB").split("/").join("-"); // DD-MM-YYYY
 
-// Hijri month names
-const hijriMonths = [
-  'Muharram', 'Safar', 'Rabi\' al-awwal', 'Rabi\' al-thani',
-  'Jumada al-awwal', 'Jumada al-thani', 'Rajab', 'Sha\'ban',
-  'Ramadan', 'Shawwal', 'Dhu al-Qi\'dah', 'Dhu al-Hijjah'
-];
+  const res = await fetch(`https://api.aladhan.com/v1/gToH?date=${dateStr}`);
+  const data = await res.json();
 
-// Islamic weekday names
-const islamicWeekdays = [
-  'Yawm al-Ahad', 'Yawm al-Ithnayn', 'Yawm al-Thulatha',
-  'Yawm al-Arba\'a', 'Yawm al-Khamis', 'Yawm al-Jum\'ah', 'Yawm as-Sabt'
-];
+  const hijri = data.data.hijri;
+  const day = parseInt(hijri.day);
+  const month = parseInt(hijri.month.number);
+  const year = parseInt(hijri.year);
 
-/**
- * Convert Gregorian date to approximate Hijri date
- * Note: This is a simplified calculation. For precise dates, use an Islamic calendar API
- */
-export const getHijriDate = (gregorianDate: Date = new Date()): HijriDate => {
-  // Simplified conversion (actual Islamic calendar is lunar and more complex)
-  // This is an approximation for demonstration purposes
-  const gregorianYear = gregorianDate.getFullYear();
-  const gregorianMonth = gregorianDate.getMonth();
-  const gregorianDay = gregorianDate.getDate();
-  
-  // Approximate conversion (Islamic calendar started in 622 CE)
-  // This is a rough estimate - real calculations are much more complex
-  const hijriYear = Math.floor((gregorianYear - 622) * 1.030684) + 1;
-  
-  // Simple month calculation (this is very approximate)
-  const dayOfYear = Math.floor((gregorianMonth * 30.44) + gregorianDay);
-  const hijriMonth = Math.floor((dayOfYear / 29.53) % 12);
-  const hijriDay = Math.floor(dayOfYear % 29.53) + 1;
-  
-  const weekday = gregorianDate.getDay();
-  
+  const upcoming =
+    islamicEvents.find(
+      (e) => e.month > month || (e.month === month && e.day > day)
+    ) || islamicEvents[0];
+
+  let eventHijriDate = `${upcoming.day}-${upcoming.month}-${year}`;
+  if (
+    upcoming.month < month ||
+    (upcoming.month === month && upcoming.day <= day)
+  ) {
+    eventHijriDate = `${upcoming.day}-${upcoming.month}-${year + 1}`;
+  }
+
+  const res2 = await fetch(
+    `https://api.aladhan.com/v1/hToG?date=${eventHijriDate}`
+  );
+  const data2 = await res2.json();
+  const eventGregorian = new Date(
+    data2.data.gregorian.date.split("-").reverse().join("-")
+  );
+
+  const diffDays = Math.ceil(
+    (eventGregorian.getTime() - today.getTime()) / (1000 * 60 * 60 * 24)
+  );
+
+  const sacredMonths = ["Muharram", "Rajab", "Dhu al-Qi'dah", "Dhu al-Hijjah"];
+  const isRamadan = hijri.month.en === "Ramadan";
+  const isHajjSeason = hijri.month.en === "Dhu al-Hijjah";
+  const isSacredMonth = sacredMonths.includes(hijri.month.en);
+
   return {
-    day: hijriDay > 29 ? hijriDay - 29 : hijriDay,
-    month: hijriMonths[hijriMonth],
-    year: hijriYear,
-    weekday: islamicWeekdays[weekday],
-    gregorianDate: gregorianDate.toLocaleDateString('en-US', {
-      weekday: 'long',
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    })
-  };
-};
-
-/**
- * Get special Islamic days and months
- */
-export const getIslamicInfo = () => {
-  const hijri = getHijriDate();
-  const isRamadan = hijri.month === 'Ramadan';
-  const isHajjSeason = hijri.month === 'Dhu al-Hijjah';
-  const isSacredMonth = ['Muharram', 'Rajab', 'Dhu al-Qi\'dah', 'Dhu al-Hijjah'].includes(hijri.month);
-  
-  return {
-    hijri,
+    hijri: {
+      day: hijri.day,
+      month: hijri.month.en,
+      year: hijri.year,
+      weekday: hijri.weekday.en,
+    },
+    upcomingEvent: {
+      name: upcoming.name,
+      inDays: diffDays,
+    },
     isRamadan,
     isHajjSeason,
     isSacredMonth,
-    specialNote: isRamadan ? 'Month of Fasting' : 
-                 isHajjSeason ? 'Month of Hajj' : 
-                 isSacredMonth ? 'Sacred Month' : null
   };
-};
+}

@@ -1,8 +1,3 @@
-/**
- * Theme Provider for Dark/Light Mode Support
- * Wraps the entire application with theme context
- */
-
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { type ThemeProviderProps } from "next-themes/dist/types";
 

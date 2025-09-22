@@ -1,8 +1,3 @@
-/**
- * Interactive Hero Section Component
- * Advanced hero section with parallax effects, animations, and interactive elements
- */
-
 import { useState, useEffect } from "react";
 import {
   ArrowRight,
@@ -21,11 +16,15 @@ import { getIslamicInfo } from "@/utils/hijriDate";
 const InteractiveHero = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isVisible, setIsVisible] = useState(false);
+  const [islamicInfo, setIslamicInfo] = useState<Awaited<
+    ReturnType<typeof getIslamicInfo>
+  > | null>(null);
   const nextPrayer = getNextPrayer();
-  const { hijri } = getIslamicInfo();
 
   useEffect(() => {
     setIsVisible(true);
+
+    getIslamicInfo().then(setIslamicInfo);
 
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({
@@ -86,11 +85,16 @@ const InteractiveHero = () => {
           >
             {/* Greeting with Current Islamic Date */}
             <div className="space-y-3">
-              <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 animate-glow">
+              <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm hover-lift card-interactive rounded-full px-4 py-2 animate-glow">
                 <Calendar className="h-4 w-4 text-secondary" />
-                <span className="text-secondary text-sm font-medium">
-                  {hijri.day} {hijri.month} {hijri.year} AH
-                </span>
+                {islamicInfo && islamicInfo.hijri ? (
+                  <span className="text-secondary text-sm font-medium">
+                    {islamicInfo.hijri.day} {islamicInfo.hijri.month}{" "}
+                    {islamicInfo.hijri.year}
+                  </span>
+                ) : (
+                  <span>Loading...</span>
+                )}
               </div>
 
               <h1 className="text-6xl md:text-8xl font-bold leading-tight text-white">
@@ -115,13 +119,13 @@ const InteractiveHero = () => {
             <div className="grid grid-cols-2 gap-4">
               <Card className="bg-white/10 backdrop-blur-sm border-white/20 hover-lift">
                 <div className="p-4 text-center">
-                  <div className="text-2xl font-bold text-white">5+</div>
+                  <div className="text-2xl font-bold text-white">5</div>
                   <div className="text-sm text-white/80">Daily Prayers</div>
                 </div>
               </Card>
               <Card className="bg-white/10 backdrop-blur-sm border-white/20 hover-lift">
                 <div className="p-4 text-center">
-                  <div className="text-2xl font-bold text-white">100+</div>
+                  <div className="text-2xl font-bold text-white">300+</div>
                   <div className="text-sm text-white/80">Community Members</div>
                 </div>
               </Card>
@@ -162,7 +166,7 @@ const InteractiveHero = () => {
           >
             {/* Next Prayer Card */}
             {nextPrayer && (
-              <Card className="bg-white/10 backdrop-blur-md border-white/20 hover-glow transition-all duration-300 group">
+              <Card className="bg-white/10 backdrop-blur-md border-white/20 hover-lift card-interactive transition-all duration-300 group">
                 <div className="p-6 space-y-4">
                   <div className="flex items-center space-x-3">
                     <div className="bg-secondary/20 p-2 rounded-lg group-hover:bg-secondary/30 transition-colors">

@@ -68,7 +68,7 @@ const Contact = () => {
                     </p>
                     <Button asChild variant="outline" className="mt-3">
                       <a
-                        href="https://maps.app.goo.gl/YmuxvoVqAHU5x4kH7"
+                        href="https://maps.app.goo.gl/V1AyZLub78usrBXS6"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center"
@@ -113,13 +113,13 @@ const Contact = () => {
                   </CardHeader>
                   <CardContent>
                     <a
-                      href="mailto:info@nagasakiislamiccenter.com"
+                      href="mailto:nagasakiislamiccenter@gmail.com"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center"
                     >
                       <p className="text-foreground font-semibold">
-                        info@nagasakiislamiccenter.com
+                        nagasakiislamiccenter@gmail.com
                       </p>
                     </a>
                     <p className="text-muted-foreground text-sm">
@@ -127,7 +127,7 @@ const Contact = () => {
                     </p>
                   </CardContent>
                 </Card>
-                {/* Office Hours */}
+                {/* Office Hours
                 <Card className="hover:shadow-islamic transition-smooth">
                   <CardHeader>
                     <CardTitle className="flex items-center space-x-3">
@@ -153,7 +153,7 @@ const Contact = () => {
                       </span>
                     </div>
                   </CardContent>
-                </Card>
+                </Card> */}
               </div>
             </div>
 
@@ -177,18 +177,27 @@ const Contact = () => {
                 <CardContent className="space-y-6">
                   <form
                     className="space-y-4"
-                    action="mailto:info@nagasakiislamiccenter.com"
+                    action="https://formspree.io/f/mblangay"
                     method="POST"
-                    encType="text/plain"
                   >
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <Label htmlFor="firstName">First Name</Label>
-                        <Input id="firstName" placeholder="Your first name" />
+                        <Input
+                          id="firstName"
+                          placeholder="Your first name"
+                          name="firstName"
+                          required
+                        />
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="lastName">Last Name</Label>
-                        <Input id="lastName" placeholder="Your last name" />
+                        <Input
+                          id="lastName"
+                          name="lastName"
+                          placeholder="Your last name"
+                          required
+                        />
                       </div>
                     </div>
 
@@ -197,7 +206,9 @@ const Contact = () => {
                       <Input
                         id="email"
                         type="email"
+                        name="email"
                         placeholder="your.email@example.com"
+                        required
                       />
                     </div>
 
@@ -205,7 +216,9 @@ const Contact = () => {
                       <Label htmlFor="subject">Subject</Label>
                       <Input
                         id="subject"
+                        name="subject"
                         placeholder="What is this regarding?"
+                        required
                       />
                     </div>
 
@@ -213,8 +226,10 @@ const Contact = () => {
                       <Label htmlFor="message">Message</Label>
                       <Textarea
                         id="message"
+                        name="message"
                         placeholder="Tell us how we can help you..."
                         className="min-h-[120px]"
+                        required
                       />
                     </div>
 
