@@ -64,24 +64,7 @@ const Footer = () => {
               >
                 Events
               </Link>
-              <Link
-                to="/gallery"
-                className="text-sm hover:text-secondary transition-smooth"
-              >
-                Gallery
-              </Link>
-              <Link
-                to="/boycott"
-                className="text-sm hover:text-secondary transition-smooth"
-              >
-                Boycott
-              </Link>
-              <Link
-                to="/donations"
-                className="text-sm hover:text-secondary transition-smooth"
-              >
-                Donations
-              </Link>
+
               <Link
                 to="/resources"
                 className="text-sm hover:text-secondary transition-smooth"

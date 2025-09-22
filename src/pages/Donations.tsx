@@ -432,31 +432,32 @@ const Donations = () => {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 animate-fade-in">
-            <Card className="hover-lift">
-              <CardHeader>
-                <CardTitle>Support Our Mission</CardTitle>
-                <CardDescription>
+            <Card className="hover-lift flex flex-col justify-center items-center text-center p-6">
+              <CardHeader className="space-y-2">
+                <CardTitle className="text-2xl font-bold">
+                  Support Our Mission
+                </CardTitle>
+                <CardDescription className="text-muted-foreground">
                   Click the button below to make a donation through our secure
                   payment portal
                 </CardDescription>
               </CardHeader>
-              <CardContent>
-                <div className="space-y-4">
-                  <Button
-                    className="w-full bg-emerald-600 hover:bg-emerald-700 h-12 text-lg"
-                    onClick={() =>
-                      window.open("https://example-donation-site.com", "_blank")
-                    }
-                  >
-                    <Heart className="mr-2 h-5 w-5" />
-                    Donate Now
-                  </Button>
 
-                  <p className="text-xs text-muted-foreground text-center">
-                    You will be redirected to our secure donation portal. We
-                    accept various payment methods.
-                  </p>
-                </div>
+              <CardContent className="w-full space-y-4">
+                <Button
+                  className="w-full bg-emerald-600 hover:bg-emerald-700 h-12 text-lg"
+                  onClick={() =>
+                    window.open("https://example-donation-site.com", "_blank")
+                  }
+                >
+                  <Heart className="mr-2 h-5 w-5" />
+                  Donate Now
+                </Button>
+
+                <p className="text-xs text-muted-foreground">
+                  You will be redirected to our secure donation portal. We
+                  accept various payment methods.
+                </p>
               </CardContent>
             </Card>
 

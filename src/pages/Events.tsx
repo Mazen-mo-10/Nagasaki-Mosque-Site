@@ -202,14 +202,26 @@ const Events = () => {
             </div>
           </div>
 
-          {/* Contact for Events */}
-          <Card className="bg-gradient-islamic text-white">
+          {/* Contact / Organize */}
+          <Card className="bg-gradient-to-r from-emerald-600 to-emerald-700 text-white">
             <CardContent className="text-center p-8 space-y-4">
               <h3 className="text-2xl font-bold">Want to Organize an Event?</h3>
-              <p className="text-white/90">
-                We welcome community members to propose and organize events.
-                Contact us to discuss your ideas and how we can support them.
+              <p className="text-white/90 max-w-2xl mx-auto">
+                Propose your event and we'll assist with logistics and
+                promotion. We welcome workshops, cultural sharing, and
+                educational programs.
               </p>
+              <div className="flex items-center justify-center gap-3 mt-2">
+                <Button
+                  className="bg-white text-emerald-700"
+                  onClick={() =>
+                    (window.location.href =
+                      "mailto:events@nagasakiislamiccenter.com?subject=Event Proposal")
+                  }
+                >
+                  Contact Events Team
+                </Button>
+              </div>
             </CardContent>
           </Card>
         </div>
@@ -349,7 +361,7 @@ const specialHighlights = [
     summary:
       "Story of Yusuf, a Japanese academic, who embraced Islam at the mosque — shared publicly as inspiration.",
     date: "June 2024",
-    pic: "/path/to/pic8.jpg", // pic8
+    pic: "https://github.com/Mazen-mo-10/Nagasaki-Mosque-Site/blob/main/src/assets/pic6.jpeg?raw=true",
   },
   {
     id: "h-kuwait-delegation",
@@ -357,7 +369,7 @@ const specialHighlights = [
     summary:
       "A delegation visit that supported the mosque opening and community development projects.",
     date: "April 2024",
-    pic: "/path/to/pic9.jpg", // pic9
+    pic: "https://github.com/Mazen-mo-10/Nagasaki-Mosque-Site/blob/main/src/assets/pic1.jpg?raw=true",
   },
 ];
 
