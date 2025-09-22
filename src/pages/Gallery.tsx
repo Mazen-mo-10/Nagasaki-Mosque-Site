@@ -259,7 +259,7 @@ const galleryImages = [
     videoUrl: "https://youtu.be/K047EPySyMA",
   },
   {
-    src: "https://github.com/Mazen-mo-10/imgs/blob/main/insta-kuwait-visit.jpg?raw=true", // لقطة شاشة أو صورة رمزية للريل
+    src: "https://github.com/Mazen-mo-10/Nagasaki-Mosque-Site/blob/main/src/assets/VidSh.jpg?raw=true",
     title: "Visit of the Kuwaiti Humanitarian Association Delegation",
     description:
       "A special visit by the Kuwaiti Humanitarian Association delegation to Nagasaki Central Mosque in Japan.",
@@ -332,7 +332,7 @@ const galleryImages = [
     date: "2024",
   },
   {
-    src: "https://github.com/Mazen-mo-10/Nagasaki-Mosque-Site/blob/main/src/assets/twoSandH.jpg?raw=true",
+    src: "https://github.com/Mazen-mo-10/Nagasaki-Mosque-Site/blob/main/src/assets/PictwoSandH.jpg?raw=true",
     title: "Young Visitors in Hijab",
     description:
       "Two young girls wearing hijab experiencing the beauty of Japanese Muslim traditions at Nagasaki Mosque.",

@@ -3,7 +3,15 @@
  * Community events, programs, and Islamic celebrations
  */
 
-import { Calendar, Users, Clock, MapPin, Star } from "lucide-react";
+import {
+  Calendar,
+  Users,
+  Clock,
+  MapPin,
+  Star,
+  Globe,
+  BookOpen,
+} from "lucide-react";
 import {
   Card,
   CardContent,
@@ -152,6 +160,48 @@ const Events = () => {
             </div>
           </div>
 
+          {/* Special Highlights */}
+          <div className="space-y-6">
+            <h2 className="text-4xl font-bold text-center text-foreground">
+              Special Highlights
+            </h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {specialHighlights.map((h) => (
+                <div
+                  key={h.id}
+                  className="relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transform transition hover:-translate-y-2 bg-white dark:bg-gray-900"
+                >
+                  <img
+                    src={h.pic}
+                    alt={h.title}
+                    onError={(
+                      e: React.SyntheticEvent<HTMLImageElement, Event>
+                    ) => {
+                      e.currentTarget.src =
+                        "https://via.placeholder.com/800x480?text=" + h.id;
+                    }}
+                    className="w-full h-40 object-cover"
+                  />
+
+                  <div className="p-4">
+                    <h3 className="font-semibold text-lg text-foreground dark:text-white">
+                      {h.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground dark:text-gray-300 mt-2">
+                      {h.summary}
+                    </p>
+                    <div className="mt-4 flex items-center justify-between">
+                      <span className="text-xs text-muted-foreground dark:text-gray-400">
+                        {h.date}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
           {/* Contact for Events */}
           <Card className="bg-gradient-islamic text-white">
             <CardContent className="text-center p-8 space-y-4">
@@ -171,13 +221,13 @@ const Events = () => {
 // Events Data
 const upcomingEvents = [
   {
-    title: "Eid al-Fitr Celebration",
-    category: "Religious Festival",
+    title: "Grand Opening — Nagasaki Central Mosque",
+    category: "Opening Ceremony",
     description:
-      "Join us for the joyous celebration of Eid al-Fitr with community prayers, traditional food, and cultural activities.",
-    date: "April 10, 2025",
-    time: "9:00 AM - 4:00 PM",
-    location: "Nagasaki Mosque Main Hall",
+      "Ceremonial opening of Nagasaki Central Mosque with Sheikh Adnan Al-Qadri, Sheikh Iyad Al-Obaidan, Sheikh Mohammed Ismail, university and municipal representation, and coverage from local media.",
+    date: "April 2024",
+    time: "Opening Day & Events",
+    location: "Nagasaki Central Mosque",
     icon: Star,
     color: "bg-secondary",
     priority: "high",
@@ -186,64 +236,66 @@ const upcomingEvents = [
     title: "Quran Study Circle",
     category: "Educational",
     description:
-      "Weekly Quran study and discussion group for deeper understanding of Islamic teachings.",
-    date: "Every Friday",
-    time: "7:30 PM - 9:00 PM",
-    location: "Mosque Study Room",
+      "Weekly Quran study and tajweed sessions using the 'Noorani Qaida' method and Arabic basics for non-native speakers.",
+    date: "Every Friday / Saturdays (see schedule)",
+    time: "After Dhuhr / Asr sessions (varies)",
+    location: "Mosque Study Rooms (Men & Women separate sessions)",
     icon: Users,
     color: "bg-primary",
+
     priority: "regular",
   },
   {
-    title: "Islamic Calligraphy Workshop",
-    category: "Cultural",
-    description:
-      "Learn the beautiful art of Arabic calligraphy with traditional techniques and modern applications.",
-    date: "March 15, 2024",
-    time: "2:00 PM - 5:00 PM",
-    location: "Community Center",
-    icon: Calendar,
-    color: "bg-accent",
-    priority: "regular",
-  },
-  {
-    title: "Interfaith Dialogue",
+    title: "Interfaith Dialogue & Peace Ambassadors",
     category: "Community Outreach",
     description:
-      "Building bridges between communities through respectful dialogue and understanding.",
-    date: "March 22, 2024",
-    time: "6:00 PM - 8:00 PM",
-    location: "Nagasaki Community Hall",
-    icon: Users,
-    color: "bg-primary",
+      "Panel with representatives from Buddhist, Christian and Muslim communities discussing faith, coexistence, and peace in Nagasaki.",
+    date: "Dec 17, 2024",
+    time: "Public hall event (evening)",
+    location: "Nagasaki City Hall - Public Hall",
+    icon: Globe,
+    color: "bg-accent",
+
     priority: "high",
+  },
+  {
+    title: "Halal Food Workshop & Demonstration",
+    category: "Cultural / Food",
+    description:
+      "Interactive halal food demo and lecture on the meaning of halal, with live cooking and tasting sessions.",
+    date: "Dec 21, 2024",
+    time: "Afternoon event",
+    location: "Municipal Hall",
+    icon: BookOpen,
+    color: "bg-secondary",
+
+    priority: "regular",
+  },
+  {
+    title: "Arabic Calligraphy Workshop",
+    category: "Arts & Culture",
+    description:
+      "Learn traditional Arabic calligraphy techniques and modern applications for design.",
+    date: "Mar 15, 2024",
+    time: "2:00 PM - 5:00 PM",
+    location: "Community Center",
+    icon: Star,
+    color: "bg-accent",
+    priority: "regular",
   },
   {
     title: "Youth Islamic Education",
     category: "Youth Program",
     description:
-      "Interactive Islamic education sessions designed specifically for young Muslims in Japan.",
-    date: "Every Saturday",
+      "Interactive classes designed for children and teenagers to learn Quran, morals, and community values.",
+    date: "Saturdays (Weekly)",
     time: "10:00 AM - 12:00 PM",
     location: "Youth Learning Center",
-    icon: Users,
-    color: "bg-secondary",
+    icon: Calendar,
+    color: "bg-primary",
     priority: "regular",
   },
-  {
-    title: "Community Iftar",
-    category: "Ramadan Special",
-    description:
-      "Breaking fast together during the holy month of Ramadan, fostering unity and brotherhood.",
-    date: "During Ramadan",
-    time: "Maghrib Time",
-    location: "Mosque Main Hall",
-    icon: Star,
-    color: "bg-accent",
-    priority: "high",
-  },
 ];
-
 const regularPrograms = [
   {
     title: "Friday Prayers (Jumu'ah)",
@@ -280,6 +332,32 @@ const regularPrograms = [
     duration: "2 hours",
     icon: Users,
     tags: ["Women", "Support", "Islamic Studies"],
+  },
+];
+const specialHighlights = [
+  {
+    id: "h-soji",
+    title: "Lecture by Japanese Da'ee Soji Muto",
+    summary:
+      "A Japanese lecture on Islamic civilization and outreach that led to new interest and a recorded shahada.",
+    date: "June 2024",
+    pic: "https://github.com/Mazen-mo-10/Nagasaki-Mosque-Site/blob/main/src/assets/WhatsApp%20Image%202025-07-05%20at%2021.00.00.jpeg?raw=true",
+  },
+  {
+    id: "h-yusuf",
+    title: "Conversion Story — Yusuf",
+    summary:
+      "Story of Yusuf, a Japanese academic, who embraced Islam at the mosque — shared publicly as inspiration.",
+    date: "June 2024",
+    pic: "/path/to/pic8.jpg", // pic8
+  },
+  {
+    id: "h-kuwait-delegation",
+    title: "Visit: Kuwaiti Humanitarian Association",
+    summary:
+      "A delegation visit that supported the mosque opening and community development projects.",
+    date: "April 2024",
+    pic: "/path/to/pic9.jpg", // pic9
   },
 ];
 

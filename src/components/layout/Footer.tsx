@@ -62,13 +62,31 @@ const Footer = () => {
                 to="/events"
                 className="text-sm hover:text-secondary transition-smooth"
               >
-                Events & Programs
+                Events
+              </Link>
+              <Link
+                to="/gallery"
+                className="text-sm hover:text-secondary transition-smooth"
+              >
+                Gallery
+              </Link>
+              <Link
+                to="/boycott"
+                className="text-sm hover:text-secondary transition-smooth"
+              >
+                Boycott
+              </Link>
+              <Link
+                to="/donations"
+                className="text-sm hover:text-secondary transition-smooth"
+              >
+                Donations
               </Link>
               <Link
                 to="/resources"
                 className="text-sm hover:text-secondary transition-smooth"
               >
-                Islamic Resources
+                Resources
               </Link>
               <Link
                 to="/contact"
@@ -110,12 +128,12 @@ const Footer = () => {
               <div className="flex items-center space-x-3 hover:text-secondary transition-smooth">
                 <Mail className="h-5 w-5 text-secondary" />
                 <a
-                  href="mailto:info@nagasakiislamiccenter.com"
+                  href="mailto:nagasakiislamiccenter.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center"
                 >
-                  <p className="text-sm">info@nagasakiislamiccenter.com</p>
+                  <p className="text-sm">nagasakiislamiccenter.com</p>
                 </a>
               </div>
             </div>

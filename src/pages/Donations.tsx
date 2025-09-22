@@ -30,9 +30,6 @@ import {
 } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Separator } from "@/components/ui/separator";
-import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const Donations = () => {
   const [animatedValue, setAnimatedValue] = useState(0);
@@ -113,6 +110,161 @@ const Donations = () => {
         </div>
       </section>
 
+      {/* The Need Section */}
+      <section id="need" className="py-16 px-4  bg-muted">
+        <div className="container mx-auto max-w-4xl">
+          <div className="text-center mb-12 animate-fade-in">
+            <h2 className="text-4xl font-bold text-foreground mb-4">
+              Why We Urgently Need Your Support
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Our community is growing rapidly, and we need your help to sustain
+              our mission
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 animate-fade-in">
+            <Card className="bg-amber-50 dark:bg-amber-950/20 border-amber-200 dark:border-amber-800 hover-lift">
+              <CardHeader>
+                <CardTitle className="flex items-center text-amber-800 dark:text-amber-300">
+                  <Users className="h-5 w-5 mr-2" />
+                  Critical Need for an Imam
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <div className="bg-amber-100 dark:bg-amber-900/30 rounded-full p-1 mr-3 mt-0.5">
+                      <Clock className="h-4 w-4 text-amber-600" />
+                    </div>
+                    <span>
+                      Currently relying on volunteer leadership which is
+                      unsustainable
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="bg-amber-100 dark:bg-amber-900/30 rounded-full p-1 mr-3 mt-0.5">
+                      <BookOpen className="h-4 w-4 text-amber-600" />
+                    </div>
+                    <span>
+                      Limited Islamic education programs without a dedicated
+                      scholar
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="bg-amber-100 dark:bg-amber-900/30 rounded-full p-1 mr-3 mt-0.5">
+                      <Heart className="h-4 w-4 text-amber-600" />
+                    </div>
+                    <span>
+                      New Muslims need consistent guidance and mentorship
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="bg-amber-100 dark:bg-amber-900/30 rounded-full p-1 mr-3 mt-0.5">
+                      <Shield className="h-4 w-4 text-amber-600" />
+                    </div>
+                    <span>
+                      Essential to preserve Islamic identity in a non-Muslim
+                      majority society
+                    </span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-emerald-50 dark:bg-emerald-950/20 border-emerald-200 dark:border-emerald-800 hover-lift">
+              <CardHeader>
+                <CardTitle className="flex items-center text-emerald-800 dark:text-emerald-300">
+                  <Building className="h-5 w-5 mr-2" />
+                  Mosque Improvements Needed
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="mb-4">
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="font-medium">Facilities Utilization</span>
+                    <span className="text-sm font-semibold">10% Complete</span>
+                  </div>
+                  <Progress value={10} className="h-2" />
+                </div>
+
+                <ul className="space-y-3 mt-4">
+                  <li className="flex items-start">
+                    <div className="bg-emerald-100 dark:bg-emerald-900/30 rounded-full p-1 mr-3 mt-0.5">
+                      <ArrowRight className="h-4 w-4 text-emerald-600" />
+                    </div>
+                    <span>
+                      Renovate unused spaces for classrooms and activities
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="bg-emerald-100 dark:bg-emerald-900/30 rounded-full p-1 mr-3 mt-0.5">
+                      <ArrowRight className="h-4 w-4 text-emerald-600" />
+                    </div>
+                    <span>Create proper facilities for wudu and restrooms</span>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="bg-emerald-100 dark:bg-emerald-900/30 rounded-full p-1 mr-3 mt-0.5">
+                      <ArrowRight className="h-4 w-4 text-emerald-600" />
+                    </div>
+                    <span>
+                      Build a library and resource center for Islamic materials
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="bg-emerald-100 dark:bg-emerald-900/30 rounded-full p-1 mr-3 mt-0.5">
+                      <ArrowRight className="h-4 w-4 text-emerald-600" />
+                    </div>
+                    <span>
+                      Develop a community kitchen for events and gatherings
+                    </span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="md:col-span-2 bg-gradient-to-r from-emerald-600 to-emerald-700 text-white hover-lift">
+              <CardHeader>
+                <CardTitle className="text-white">
+                  Your Impact: Transforming Lives
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  <div className="text-center p-4 bg-white/10 rounded-lg">
+                    <div className="text-3xl font-bold mb-2">100+</div>
+                    <p>Muslims currently benefiting from our mosque</p>
+                  </div>
+                  <div className="text-center p-4 bg-white/10 rounded-lg">
+                    <div className="text-3xl font-bold mb-2">15+</div>
+                    <p>New Muslims guided to Islam in the past year</p>
+                  </div>
+                  <div className="text-center p-4 bg-white/10 rounded-lg">
+                    <div className="text-3xl font-bold mb-2">15+</div>
+                    <p>
+                      Years needed to establish this mosque against all odds
+                    </p>
+                  </div>
+                </div>
+
+                <Separator className="my-6 bg-white/20" />
+
+                <div className="text-center">
+                  <p className="italic">
+                    "The example of those who spend their wealth in the way of
+                    Allah is like a seed which grows seven spikes, in each spike
+                    is a hundred grains..."
+                  </p>
+                  <p className="mt-2 text-sm opacity-80">
+                    Surah Al-Baqarah (2:261)
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Progress Section */}
       <section className="py-16 px-4 bg-white dark:bg-gray-900">
         <div className="container mx-auto max-w-4xl">
@@ -142,7 +294,7 @@ const Donations = () => {
                 <div className="flex justify-between items-center">
                   <span className="font-medium">Raised so far:</span>
                   <span className="text-2xl font-bold text-emerald-700 dark:text-emerald-300">
-                    {formatCurrency(animatedValue)}
+                    0
                   </span>
                 </div>
                 <Progress
@@ -150,10 +302,8 @@ const Donations = () => {
                   className="h-4"
                 />
                 <div className="flex justify-between items-center text-sm text-muted-foreground">
-                  <span>
-                    {Math.round((animatedValue / 1250000) * 100)}% complete
-                  </span>
-                  <span>{formatCurrency(1250000 - animatedValue)} needed</span>
+                  <span>{0}% complete</span>
+                  <span>1,250,000$ needed</span>
                 </div>
               </div>
 
@@ -164,7 +314,7 @@ const Donations = () => {
                   <div className="bg-emerald-100 dark:bg-emerald-900/30 p-3 rounded-full w-fit mx-auto">
                     <Users className="h-6 w-6 text-emerald-600 mx-auto" />
                   </div>
-                  <h3 className="font-semibold mt-2">6+ Nationalities</h3>
+                  <h3 className="font-semibold mt-2">40+ Nationalities</h3>
                   <p className="text-sm text-muted-foreground">
                     Served by our mosque
                   </p>
@@ -450,9 +600,7 @@ const Donations = () => {
             <div className="space-y-2">
               <Mail className="h-8 w-8 text-amber-300 mx-auto" />
               <h3 className="font-semibold">Contact Us</h3>
-              <p className="text-sm text-white/90">
-                info@nagasakiislamiccenter.com
-              </p>
+              <p className="text-sm text-white/90">nagasakiislamiccenter.com</p>
             </div>
 
             <div className="space-y-2">
