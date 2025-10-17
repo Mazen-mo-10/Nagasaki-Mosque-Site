@@ -165,12 +165,25 @@ const PrayerTimes = () => {
           {/* Islamic Quote */}
           <Card className="bg-gradient-islamic text-white">
             <CardContent className="text-center p-8">
+              {/* Arabic Verse with Tashkeel */}
+              <div className="mb-6">
+                <p className="text-2xl font-arabic leading-loose mb-4">
+                  {`وَأَقِمِ ٱلصَّلَاةَ طَرَفَىِ ٱلنَّهَارِ وَزُلَفٗا مِّنَ ٱلَّيۡلِۚ إِنَّ ٱلۡحَسَنَٰتِ يُذۡهِبۡنَ ٱلسَّيِّـَٔاتِۚ ذَٰلِكَ ذِكۡرَىٰ لِلذَّٰكِرِينَ`}
+                </p>
+              </div>
+
+              {/* English Translation */}
               <p className="text-lg italic mb-4">
                 "And establish prayer at the two ends of the day and at the
                 approach of the night. Indeed, good deeds do away with
                 misdeeds."
               </p>
-              <p className="text-secondary font-semibold">- Quran 11:114</p>
+
+              {/* Reference */}
+              <div className="flex flex-col items-center">
+                <p className="text-secondary font-semibold">- هود 114</p>
+                <p className="text-secondary font-semibold">- Hood 114</p>
+              </div>
             </CardContent>
           </Card>
         </div>

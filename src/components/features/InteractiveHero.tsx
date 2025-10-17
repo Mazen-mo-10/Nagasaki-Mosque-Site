@@ -247,8 +247,8 @@ const InteractiveHero = () => {
                   <Sparkles className="h-5 w-5 text-secondary animate-bounce-gentle" />
                 </div>
                 <p className="text-gray-800 dark:text-white text-sm">
-                  Join us for weekly Islamic education classes and community
-                  gatherings
+                  A market will be opened at the mosque to sell halal and
+                  non-boycotted products.
                 </p>
                 <Button
                   asChild

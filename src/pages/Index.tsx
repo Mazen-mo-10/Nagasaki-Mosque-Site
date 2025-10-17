@@ -153,10 +153,10 @@ const Index = () => {
                           <BookOpen className="h-6 w-6 text-secondary animate-pulse-slow" />
                         </div>
                         <div className="text-2xl font-bold text-secondary">
-                          50+
+                          60+
                         </div>
                         <div className="text-sm text-muted-foreground">
-                          Weekly Classes
+                          Nationalities
                         </div>
                       </CardContent>
                     </Card>
@@ -292,9 +292,7 @@ const Index = () => {
                       <div className="bg-accent/20 p-4 rounded-xl w-fit group-hover:bg-accent group-hover:text-white transition-all duration-300 mb-4 hover-rotate">
                         <BookOpen className="h-8 w-8 text-accent group-hover:text-white" />
                       </div>
-                      <CardTitle className="text-xl">
-                        Islamic Resources
-                      </CardTitle>
+                      <CardTitle className="text-xl">soon</CardTitle>
                       <CardDescription className="text-sm">
                         Access Quran, Hadith, apps, and educational materials
                       </CardDescription>
@@ -379,7 +377,7 @@ const Index = () => {
                             <div>
                               <p className="font-medium">Quran Study Circle</p>
                               <p className="text-sm text-muted-foreground">
-                                Sundays 2:00 PM
+                                Saturdays 17:00
                               </p>
                             </div>
                           </div>
@@ -393,7 +391,7 @@ const Index = () => {
                             <div>
                               <p className="font-medium">Youth Programs</p>
                               <p className="text-sm text-muted-foreground">
-                                Saturdays 10:00 AM
+                                Saturdays 16:00
                               </p>
                             </div>
                           </div>
@@ -512,9 +510,10 @@ const Index = () => {
                     <Sparkles className="h-6 w-6 text-secondary animate-bounce-gentle" />
                   </div>
                   <p className="text-white/90 leading-relaxed">
-                    "And whoever enters it shall be secure" - Whether you're a
-                    visitor to Nagasaki, a new Muslim, or seeking to learn about
-                    Islam, our doors and hearts are always open.
+                    We are the proud community behind the Nagasaki Islamic
+                    Center, home to the first and only mosque in Nagasaki
+                    Prefecture, Japan. Since opening in April 2024, our mosque
+                    has welcomed Muslims from over 62 nationalities
                   </p>
                 </div>
               </Reveal>

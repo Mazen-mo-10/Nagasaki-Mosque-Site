@@ -183,9 +183,9 @@ const Donations = () => {
                 <div className="mb-4">
                   <div className="flex justify-between items-center mb-2">
                     <span className="font-medium">Facilities Utilization</span>
-                    <span className="text-sm font-semibold">10% Complete</span>
+                    <span className="text-sm font-semibold">0% Complete</span>
                   </div>
-                  <Progress value={10} className="h-2" />
+                  <Progress value={0} className="h-2" />
                 </div>
 
                 <ul className="space-y-3 mt-4">
@@ -282,7 +282,7 @@ const Donations = () => {
             <CardHeader>
               <CardTitle className="flex items-center text-emerald-800 dark:text-emerald-300">
                 <Target className="h-5 w-5 mr-2" />
-                Fundraising Goal: {formatCurrency(1250000)}
+                Fundraising Goal: {formatCurrency(45000)}
               </CardTitle>
               <CardDescription>
                 We aim to raise funds to support our mosque and hire a full-time
@@ -303,7 +303,7 @@ const Donations = () => {
                 />
                 <div className="flex justify-between items-center text-sm text-muted-foreground">
                   <span>{0}% complete</span>
-                  <span>1,250,000$ needed</span>
+                  <span>45,000$ needed</span>
                 </div>
               </div>
 
@@ -370,7 +370,7 @@ const Donations = () => {
                   Thanks to the generous support of Muslims worldwide—especially
                   our brothers and sisters in Kuwait—we transformed an old
                   building into a beautiful mosque. Alhamdulillah, our dream
-                  came true in April 2024.
+                  came true in April 2025.
                 </p>
               </CardContent>
             </Card>
