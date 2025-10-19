@@ -242,7 +242,7 @@ const galleryImages = [
     src: "https://img.youtube.com/vi/0U83nfBXTVI/hqdefault.jpg",
     title: "Inspiring Talk with New Japanese Muslims",
     description:
-      "A touching meeting with new Japanese Muslims sharing their journey at Nagasaki Mosque.",
+      "A touching meeting with new Japanese Muslims sharing their journey at Islam.",
     category: "videos",
     date: "2025",
     videoUrl: "https://youtu.be/0U83nfBXTVI?si=lyUZZEWJHqLxF6-E",
@@ -265,8 +265,7 @@ const galleryImages = [
       "A special visit by the Kuwaiti Humanitarian Association delegation to Nagasaki Central Mosque in Japan.",
     category: "videos",
     date: "2025",
-    videoUrl:
-      "https://www.instagram.com/reel/DIitGgzt2hu/?igsh=MWx2eGF4Mmw1cTBkaA==",
+    videoUrl: "../assets/videIslamNew.mp4",
   },
   {
     src: "https://github.com/Mazen-mo-10/imgs/blob/main/pic1.jpg?raw=true",
@@ -278,18 +277,18 @@ const galleryImages = [
   },
   {
     src: "https://github.com/Mazen-mo-10/imgs/blob/main/pic2.JPG?raw=true",
-    title: "Community Gathering at the Mosque",
+    title: "Community Gathering before we had our beloved mosque now",
     description:
       "A special day where mosque members come together for prayer, discussions, and strengthening brotherhood.",
     category: "celebrations",
-    date: "April 2025",
+    date: "April 2024",
   },
   {
     src: "https://github.com/Mazen-mo-10/Nagasaki-Mosque-Site/blob/main/src/assets/Picture%202.jpg?raw=true",
     title: "Mosque Architecture",
     description: "Beautiful Islamic architectural details of our prayer hall",
     category: "architecture",
-    date: "February 2025",
+    date: "February 2024",
   },
   {
     src: "https://github.com/Mazen-mo-10/imgs/blob/main/pic4.JPG?raw=true",
@@ -321,7 +320,7 @@ const galleryImages = [
     description:
       "A major festive gathering at Nagasaki Mosque with international guests and visitors from outside the city.",
     category: "celebrations",
-    date: "2025",
+    date: "2024",
   },
   {
     src: "https://github.com/Mazen-mo-10/Nagasaki-Mosque-Site/blob/main/src/assets/PicYE.png?raw=true",
@@ -329,7 +328,7 @@ const galleryImages = [
     description:
       "A vibrant food gathering at Nagasaki Mosque showcasing dishes from diverse cultures and traditions.",
     category: "community",
-    date: "2025",
+    date: "2024",
   },
   {
     src: "https://github.com/Mazen-mo-10/Nagasaki-Mosque-Site/blob/main/src/assets/PictwoSandH.jpg?raw=true",
@@ -337,7 +336,7 @@ const galleryImages = [
     description:
       "Two young girls wearing hijab experiencing the beauty of Japanese Muslim traditions at Nagasaki Mosque.",
     category: "culture",
-    date: "2025",
+    date: "2024",
   },
   {
     src: "https://github.com/Mazen-mo-10/imgs/blob/main/nag2.jpeg?raw=true",
@@ -349,11 +348,11 @@ const galleryImages = [
   },
   {
     src: "https://github.com/Mazen-mo-10/imgs/blob/main/nag4.jpeg?raw=true",
-    title: "Mosque Community Photo",
+    title: "Mosque Community before we have our mosque",
     description:
-      "Complete mosque community members standing together in a memorable group photo.",
+      "Complete mosque community members standing together in a memorable group photo before we have our mosque.",
     category: "community",
-    date: "March 2025",
+    date: "March 2024",
   },
   {
     src: "https://github.com/Mazen-mo-10/imgs/blob/main/nag6.jpeg?raw=true",

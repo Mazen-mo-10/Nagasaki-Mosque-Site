@@ -520,19 +520,22 @@ const learningResources = [
 // Audio Resources Data
 const audioResources = [
   {
+    title: "Yasser Al Dossari",
+    description:
+      "Yasser Al Dossari is a Saudi imam and Qur’an reciter, known for his emotional voice and precise recitation at the Grand Mosque in Makkah.",
+    link: "https://qurancentral.com/audio/yasser-al-dossari?gad_source=1&gad_campaignid=9450340727&gbraid=0AAAAADGzcYqiliigMnZB7yscOUulnkkd_&gclid=CjwKCAjwmNLHBhA4EiwA3ts3mdmuigHRMfM1tilNNQ7cbBmZJ1jOwQB5hfrq08CxBuMeRqBZPOrbERoCafAQAvD_BwE",
+  },
+  {
+    title: "Muhammad Al-Minshawy",
+    description:
+      "Muhammad Al-Minshawy was an Egyptian Qur’an reciter, known for his deep, soulful voice and mastery of Tajweed.",
+    link: "https://www.mp3quran.net/ar/minsh",
+  },
+  {
     title: "Mishary Rashid Alafasy",
-    description: "Famous recitations of the Holy Quran",
-    link: "https://qurancentral.com/audio/mishary-rashid-al-afasy/",
-  },
-  {
-    title: "Saad Al-Ghamdi",
-    description: "Beautiful recitations with tajweed",
+    description:
+      "Mishary Rashid Alafasy is a Kuwaiti imam and Qur’an reciter, famous for his beautiful voice and heartfelt recitations heard worldwide.",
     link: "https://quran.com/en/reciters/7",
-  },
-  {
-    title: "Nouman Ali Khan Lectures",
-    description: "Islamic talks and tafsir sessions",
-    link: "https://bayyinah.tv/",
   },
 ];
 

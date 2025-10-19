@@ -247,8 +247,8 @@ const InteractiveHero = () => {
                   <Sparkles className="h-5 w-5 text-secondary animate-bounce-gentle" />
                 </div>
                 <p className="text-gray-800 dark:text-white text-sm">
-                  A market will be opened at the mosque to sell halal and
-                  non-boycotted products.
+                  Participation in the 27th Nagasaki International Festival on
+                  Monday, December 14, from 11:00 AM to 4:00 PM.
                 </p>
                 <Button
                   asChild

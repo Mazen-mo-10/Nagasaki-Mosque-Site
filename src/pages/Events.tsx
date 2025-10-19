@@ -237,7 +237,7 @@ const upcomingEvents = [
     category: "Opening Ceremony",
     description:
       "Ceremonial opening of Nagasaki Central Mosque with Sheikh Adnan Al-Qadri, Sheikh Iyad Al-Obaidan, Sheikh Mohammed Ismail, university and municipal representation, and coverage from local media.",
-    date: "April 2025",
+    date: "April 2024",
     time: "Opening Day & Events",
     location: "Nagasaki Central Mosque",
     icon: Star,
@@ -254,7 +254,6 @@ const upcomingEvents = [
     location: "Mosque Study Rooms (Men & Women separate sessions)",
     icon: Users,
     color: "bg-primary",
-
     priority: "regular",
   },
   {
@@ -262,7 +261,7 @@ const upcomingEvents = [
     category: "Community Outreach",
     description:
       "Panel with representatives from Buddhist, Christian and Muslim communities discussing faith, coexistence, and peace in Nagasaki.",
-    date: "Dec 17, 2025",
+    date: "Dec 17, 2024",
     time: "Public hall event (evening)",
     location: "Nagasaki City Hall - Public Hall",
     icon: Globe,
@@ -275,7 +274,7 @@ const upcomingEvents = [
     category: "Cultural / Food",
     description:
       "Interactive halal food demo and lecture on the meaning of halal, with live cooking and tasting sessions.",
-    date: "Dec 21, 2025",
+    date: "Dec 21, 2024",
     time: "Afternoon event",
     location: "Municipal Hall",
     icon: BookOpen,
@@ -288,7 +287,7 @@ const upcomingEvents = [
     category: "Arts & Culture",
     description:
       "Learn traditional Arabic calligraphy techniques and modern applications for design.",
-    date: "Mar 15, 2025",
+    date: "Mar 15, 2024",
     time: "2:00 PM - 5:00 PM",
     location: "Community Center",
     icon: Star,
@@ -349,18 +348,17 @@ const regularPrograms = [
 const specialHighlights = [
   {
     id: "h-soji",
-    title: "Lecture by Japanese Da'ee Soji Muto",
+    title: "Muslim representative Dr.Junayed",
     summary:
       "A Japanese lecture on Islamic civilization and outreach that led to new interest and a recorded shahada.",
-    date: "June 2025",
+    date: "17th of December 2024",
     pic: "https://github.com/Mazen-mo-10/Nagasaki-Mosque-Site/blob/main/src/assets/WhatsApp%20Image%202025-07-05%20at%2021.00.00.jpeg?raw=true",
   },
   {
     id: "h-yusuf",
-    title: "Conversion Story — Yusuf",
-    summary:
-      "Story of Yusuf, a Japanese academic, who embraced Islam at the mosque — shared publicly as inspiration.",
-    date: "June 2025",
+    title: "lecture Series JMPF",
+    summary: "Seminar 2024 with sheikh Mohammad Al Naqwi.",
+    date: "17th of November 2024",
     pic: "https://github.com/Mazen-mo-10/Nagasaki-Mosque-Site/blob/main/src/assets/pic6.jpeg?raw=true",
   },
   {
@@ -368,7 +366,7 @@ const specialHighlights = [
     title: "Visit: Kuwaiti Humanitarian Association",
     summary:
       "A delegation visit that supported the mosque opening and community development projects.",
-    date: "April 2025",
+    date: "April 2024",
     pic: "https://github.com/Mazen-mo-10/Nagasaki-Mosque-Site/blob/main/src/assets/pic1.jpg?raw=true",
   },
 ];

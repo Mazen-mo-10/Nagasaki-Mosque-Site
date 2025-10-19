@@ -3,17 +3,17 @@
  * Displays recommended apps, books, and resources
  */
 
-import { Book, Smartphone, Download, ExternalLink, Star } from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Book, Smartphone, Download, ExternalLink, Star } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 interface IslamicApp {
   name: string;
   description: string;
   features: string[];
-  platform: 'iOS' | 'Android' | 'Both';
+  platform: "iOS" | "Android" | "Both";
   rating: number;
   downloadUrl: string;
 }
@@ -30,86 +30,114 @@ interface IslamicBook {
 const islamicApps: IslamicApp[] = [
   {
     name: "Muslim Pro",
-    description: "Complete Islamic companion with prayer times, Quran, and qibla direction",
-    features: ["Prayer Times", "Quran Recitation", "Qibla Compass", "Hijri Calendar"],
+    description:
+      "Complete Islamic companion with prayer times, Quran, and qibla direction",
+    features: [
+      "Prayer Times",
+      "Quran Recitation",
+      "Qibla Compass",
+      "Hijri Calendar",
+    ],
     platform: "Both",
     rating: 4.8,
-    downloadUrl: "https://muslimpro.com"
+    downloadUrl: "https://muslimpro.com",
   },
   {
     name: "Quran Majeed",
     description: "Beautiful Quran app with translations and audio recitations",
-    features: ["Multiple Translations", "Audio Recitations", "Tafsir", "Bookmarks"],
+    features: [
+      "Multiple Translations",
+      "Audio Recitations",
+      "Tafsir",
+      "Bookmarks",
+    ],
     platform: "Both",
     rating: 4.9,
-    downloadUrl: "https://quranmajeed.com"
+    downloadUrl: "https://quranmajeed.com",
   },
   {
     name: "Athan Pro",
-    description: "Accurate prayer times and beautiful athan sounds",
-    features: ["Accurate Prayer Times", "Multiple Athan Sounds", "Qibla Direction", "Mosques Nearby"],
+    description: "Accurate prayer times and beautiful athan sounds worldwide",
+    features: [
+      "Accurate Prayer Times",
+      "Multiple Athan Sounds",
+      "Qibla Direction",
+      "Mosques Nearby",
+    ],
     platform: "Both",
     rating: 4.7,
-    downloadUrl: "https://athanpro.com"
+    downloadUrl: "https://athanpro.com",
   },
   {
     name: "Hisnul Muslim",
     description: "Fortress of the Muslim - comprehensive dua collection",
-    features: ["Daily Duas", "Arabic & Translation", "Audio Recitation", "Categories"],
+    features: [
+      "Daily Duas",
+      "Arabic & Translation",
+      "Audio Recitation",
+      "Categories",
+    ],
     platform: "Both",
     rating: 4.6,
-    downloadUrl: "https://hisnulmuslim.com"
-  }
+    downloadUrl:
+      "https://play.google.com/store/apps/details?id=com.afrodawah.hisnulmuslimenglish",
+  },
 ];
 
 const islamicBooks: IslamicBook[] = [
   {
     title: "The Sealed Nectar",
     author: "Safi-ur-Rahman al-Mubarakpuri",
-    description: "The most authentic and complete biography of Prophet Muhammad (PBUH)",
+    description:
+      "The most authentic and complete biography of Prophet Muhammad (PBUH)",
     category: "Biography",
     recommended: true,
-    arabicTitle: "الرحيق المختوم"
+    arabicTitle: "الرحيق المختوم",
   },
   {
     title: "Fortress of the Muslim",
     author: "Sa'id ibn Wahf al-Qahtani",
-    description: "Collection of authentic duas and remembrances from Quran and Sunnah",
+    description:
+      "Collection of authentic duas and remembrances from Quran and Sunnah",
     category: "Dua & Dhikr",
     recommended: true,
-    arabicTitle: "حصن المسلم"
+    arabicTitle: "حصن المسلم",
   },
   {
     title: "Tafsir Ibn Kathir",
     author: "Ibn Kathir",
-    description: "Classical commentary on the Quran, explaining verses with Hadith and scholarly insight",
+    description:
+      "Classical commentary on the Quran, explaining verses with Hadith and scholarly insight",
     category: "Tafsir",
     recommended: true,
-    arabicTitle: "تفسير ابن كثير"
+    arabicTitle: "تفسير ابن كثير",
   },
   {
     title: "Riyad as-Salihin",
     author: "Imam an-Nawawi",
-    description: "Gardens of the Righteous - collection of authentic Hadith on Islamic ethics",
+    description:
+      "Gardens of the Righteous - collection of authentic Hadith on Islamic ethics",
     category: "Hadith",
     recommended: true,
-    arabicTitle: "رياض الصالحين"
+    arabicTitle: "رياض الصالحين",
   },
   {
     title: "The Lives of the Prophets",
     author: "Ibn Kathir",
-    description: "Stories and lessons from the lives of all the Prophets mentioned in Islam",
+    description:
+      "Stories and lessons from the lives of all the Prophets mentioned in Islam",
     category: "History",
     recommended: false,
-    arabicTitle: "قصص الأنبياء"
+    arabicTitle: "قصص الأنبياء",
   },
   {
     title: "Islamic Jurisprudence",
     author: "Various Scholars",
-    description: "Comprehensive guide to Islamic law and its practical applications",
+    description:
+      "Comprehensive guide to Islamic law and its practical applications",
     category: "Fiqh",
-    recommended: false
-  }
+    recommended: false,
+  },
 ];
 
 const IslamicResources = () => {
@@ -122,13 +150,13 @@ const IslamicResources = () => {
             <div className="flex items-center space-x-2">
               <div className="flex items-center">
                 {[...Array(5)].map((_, i) => (
-                  <Star 
-                    key={i} 
+                  <Star
+                    key={i}
                     className={`h-3 w-3 ${
-                      i < Math.floor(app.rating) 
-                        ? 'fill-secondary text-secondary' 
-                        : 'text-muted-foreground'
-                    }`} 
+                      i < Math.floor(app.rating)
+                        ? "fill-secondary text-secondary"
+                        : "text-muted-foreground"
+                    }`}
                   />
                 ))}
                 <span className="text-xs text-muted-foreground ml-1">
@@ -143,12 +171,10 @@ const IslamicResources = () => {
           <Smartphone className="h-6 w-6 text-primary" />
         </div>
       </CardHeader>
-      
+
       <CardContent className="space-y-4">
-        <p className="text-sm text-muted-foreground">
-          {app.description}
-        </p>
-        
+        <p className="text-sm text-muted-foreground">{app.description}</p>
+
         <div className="space-y-2">
           <p className="text-xs font-medium text-foreground">Features:</p>
           <div className="flex flex-wrap gap-1">
@@ -159,15 +185,11 @@ const IslamicResources = () => {
             ))}
           </div>
         </div>
-        
-        <Button 
-          asChild 
-          size="sm" 
-          className="w-full"
-        >
-          <a 
-            href={app.downloadUrl} 
-            target="_blank" 
+
+        <Button asChild size="sm" className="w-full">
+          <a
+            href={app.downloadUrl}
+            target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center"
           >
@@ -181,14 +203,23 @@ const IslamicResources = () => {
   );
 
   const BookCard = ({ book }: { book: IslamicBook }) => (
-    <Card className={`hover-lift ${book.recommended ? 'border-primary/40 bg-primary/5' : ''}`}>
+    <Card
+      className={`hover-lift ${
+        book.recommended ? "border-primary/40 bg-primary/5" : ""
+      }`}
+    >
       <CardHeader className="pb-3">
         <div className="flex items-start justify-between">
           <div className="space-y-1 flex-1">
             <div className="flex items-center space-x-2">
-              <CardTitle className="text-base leading-tight">{book.title}</CardTitle>
+              <CardTitle className="text-base leading-tight">
+                {book.title}
+              </CardTitle>
               {book.recommended && (
-                <Badge variant="secondary" className="text-xs animate-pulse-slow">
+                <Badge
+                  variant="secondary"
+                  className="text-xs animate-pulse-slow"
+                >
                   Recommended
                 </Badge>
               )}
@@ -206,7 +237,7 @@ const IslamicResources = () => {
           <Book className="h-6 w-6 text-primary flex-shrink-0" />
         </div>
       </CardHeader>
-      
+
       <CardContent>
         <p className="text-sm text-muted-foreground leading-relaxed">
           {book.description}
@@ -225,7 +256,7 @@ const IslamicResources = () => {
           <span>Islamic Resources</span>
         </CardTitle>
       </CardHeader>
-      
+
       <CardContent>
         <Tabs defaultValue="apps">
           <TabsList className="grid w-full grid-cols-2">
@@ -238,7 +269,7 @@ const IslamicResources = () => {
               <span>Recommended Books</span>
             </TabsTrigger>
           </TabsList>
-          
+
           <TabsContent value="apps" className="mt-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {islamicApps.map((app, index) => (
@@ -246,21 +277,27 @@ const IslamicResources = () => {
               ))}
             </div>
           </TabsContent>
-          
+
           <TabsContent value="books" className="mt-6">
             <div className="space-y-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {islamicBooks.filter(book => book.recommended).map((book, index) => (
-                  <BookCard key={index} book={book} />
-                ))}
-              </div>
-              
-              <div className="border-t pt-4">
-                <h4 className="font-medium text-foreground mb-4">Additional Reading</h4>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {islamicBooks.filter(book => !book.recommended).map((book, index) => (
+                {islamicBooks
+                  .filter((book) => book.recommended)
+                  .map((book, index) => (
                     <BookCard key={index} book={book} />
                   ))}
+              </div>
+
+              <div className="border-t pt-4">
+                <h4 className="font-medium text-foreground mb-4">
+                  Additional Reading
+                </h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {islamicBooks
+                    .filter((book) => !book.recommended)
+                    .map((book, index) => (
+                      <BookCard key={index} book={book} />
+                    ))}
                 </div>
               </div>
             </div>

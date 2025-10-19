@@ -9,6 +9,9 @@ import {
   Sparkles,
   Calendar,
   Play,
+  ShoppingBasket,
+  Leaf,
+  ShieldCheck,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -190,6 +193,161 @@ const Index = () => {
                 </div>
               </div>
             </Reveal>
+          </div>
+        </section>
+      </Reveal>
+
+      {/* Halal Market Announcement Section */}
+      <Reveal>
+        <section className="py-20 px-4 bg-gradient-to-br from-emerald-50/80 via-white to-green-50/60 dark:from-emerald-950/20 dark:via-card dark:to-green-900/10 relative overflow-hidden">
+          {/* Animated background elements */}
+          <div className="absolute top-10 left-10 w-20 h-20 bg-emerald-200/40 rounded-full animate-float" />
+          <div
+            className="absolute bottom-10 right-10 w-16 h-16 bg-green-200/40 rounded-full animate-float"
+            style={{ animationDelay: "2s" }}
+          />
+          <div className="absolute top-1/2 left-1/4 w-12 h-12 bg-amber-200/30 rounded-full animate-pulse-slow" />
+
+          <div className="container mx-auto relative z-10">
+            <div className="max-w-5xl mx-auto">
+              <Card className="hover-lift card-interactive bg-gradient-to-r from-white/90 to-emerald-50/70 dark:from-card/95 dark:to-emerald-900/10 border-emerald-200/60 dark:border-emerald-700/40 shadow-xl relative overflow-hidden group">
+                {/* Animated background pattern */}
+                <div className="absolute inset-0 opacity-[0.03] group-hover:opacity-[0.05] transition-all duration-500">
+                  <div className="absolute inset-0 pattern-islamic scale-150" />
+                </div>
+
+                {/* Shimmer effect on hover */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
+
+                <CardContent className="p-8 md:p-12 relative z-10">
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    {/* Animated Icon Section */}
+                    <div className="lg:col-span-4 flex justify-center">
+                      <div className="relative group/icon">
+                        <div className="w-28 h-28 bg-gradient-to-br from-emerald-500 via-green-600 to-emerald-700 rounded-2xl flex items-center justify-center shadow-lg hover-lift hover-rotate transition-all duration-500 group-hover/icon:scale-110 group-hover/icon:shadow-2xl">
+                          <ShoppingBasket className="h-14 w-14 text-white animate-bounce-gentle" />
+                        </div>
+
+                        {/* Floating stars around icon */}
+                        <div className="absolute -top-3 -right-3 w-8 h-8 bg-amber-500 rounded-full flex items-center justify-center animate-bounce-gentle group-hover/icon:scale-125 transition-transform">
+                          <Sparkles className="h-4 w-4 text-white" />
+                        </div>
+                        <div
+                          className="absolute -bottom-2 -left-2 w-6 h-6 bg-secondary/80 rounded-full flex items-center justify-center animate-bounce-gentle"
+                          style={{ animationDelay: "1s" }}
+                        >
+                          <Star className="h-3 w-3 text-white" />
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Content Section */}
+                    <div className="lg:col-span-5 text-center lg:text-left space-y-6">
+                      <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-emerald-100 to-green-100 dark:from-emerald-900/40 dark:to-green-900/40 text-emerald-700 dark:text-emerald-300 rounded-full px-4 py-2 border border-emerald-200/50 dark:border-emerald-700/30 hover-lift transition-all duration-300 hover:scale-105">
+                        <Leaf className="h-4 w-4 animate-pulse-slow" />
+                        <span className="text-sm font-bold">Coming Soon</span>
+                      </div>
+
+                      <div className="space-y-4">
+                        <h3 className="text-3xl md:text-4xl font-bold text-foreground leading-tight">
+                          Nagasaki{" "}
+                          <span className="text-transparent bg-gradient-to-r from-emerald-600 to-green-600 bg-clip-text animate-gradient">
+                            Halal Market
+                          </span>
+                        </h3>
+
+                        <p className="text-muted-foreground leading-relaxed text-lg">
+                          Supporting our brothers and sisters in Palestine with
+                          ethically sourced halal products that align with our
+                          Islamic values and principles.
+                        </p>
+
+                        <div className="bg-gradient-to-r from-emerald-500/10 to-green-500/10 rounded-xl p-4 border border-emerald-200/50 dark:border-emerald-700/30">
+                          <p className="text-emerald-700 dark:text-emerald-300 font-semibold text-center">
+                            🕋 100% Halal • 100% Ethical • 100%
+                            Community-Focused 🕋
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Interactive Features & Badge */}
+                    <div className="lg:col-span-3 space-y-6">
+                      {/* Interactive Badges */}
+                      <div className="flex flex-col gap-4">
+                        <div className="group/badge flex items-center space-x-3 bg-white/80 dark:bg-card/80 backdrop-blur-sm rounded-2xl p-4 border border-emerald-200/50 dark:border-emerald-700/30 shadow-sm hover-lift hover:scale-105 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 transition-all duration-300 cursor-pointer">
+                          <div className="flex-shrink-0 w-12 h-12 bg-red-100 dark:bg-red-900/30 rounded-xl flex items-center justify-center group-hover/badge:scale-110 transition-transform">
+                            <ShieldCheck className="h-6 w-6 text-red-600 dark:text-red-400 animate-pulse-slow" />
+                          </div>
+                          <div>
+                            <p className="font-bold text-foreground">
+                              Palestine Support
+                            </p>
+                            <p className="text-xs text-muted-foreground">
+                              Ethical sourcing
+                            </p>
+                          </div>
+                        </div>
+
+                        <div className="group/badge flex items-center space-x-3 bg-white/80 dark:bg-card/80 backdrop-blur-sm rounded-2xl p-4 border border-green-200/50 dark:border-green-700/30 shadow-sm hover-lift hover:scale-105 hover:bg-green-50 dark:hover:bg-green-900/20 transition-all duration-300 cursor-pointer">
+                          <div className="flex-shrink-0 w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-xl flex items-center justify-center group-hover/badge:scale-110 transition-transform">
+                            <Leaf className="h-6 w-6 text-green-600 dark:text-green-400 animate-pulse-slow" />
+                          </div>
+                          <div>
+                            <p className="font-bold text-foreground">
+                              Halal Certified
+                            </p>
+                            <p className="text-xs text-muted-foreground">
+                              Fully compliant
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Main Coming Soon Badge */}
+                      <div className="text-center">
+                        <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-amber-500 to-yellow-500 text-white rounded-full px-6 py-3 shadow-lg hover-lift hover:scale-105 hover:shadow-xl transition-all duration-300 group/soon cursor-pointer">
+                          <Sparkles className="h-5 w-5 animate-spin-slow group-hover/soon:animate-bounce" />
+                          <span className="font-bold text-sm">
+                            LAUNCHING SOON
+                          </span>
+                          <Sparkles
+                            className="h-5 w-5 animate-spin-slow group-hover/soon:animate-bounce"
+                            style={{ animationDelay: "0.5s" }}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Decorative Footer */}
+                  <div className="mt-8 pt-6 border-t border-emerald-200/30 dark:border-emerald-700/30">
+                    <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-muted-foreground">
+                      <div className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
+                        <span>Community Market</span>
+                      </div>
+                      <div className="w-1 h-1 bg-emerald-300 rounded-full"></div>
+                      <div className="flex items-center space-x-2">
+                        <div
+                          className="w-2 h-2 bg-green-500 rounded-full animate-pulse"
+                          style={{ animationDelay: "0.3s" }}
+                        ></div>
+                        <span>Ethical Products</span>
+                      </div>
+                      <div className="w-1 h-1 bg-emerald-300 rounded-full"></div>
+                      <div className="flex items-center space-x-2">
+                        <div
+                          className="w-2 h-2 bg-amber-500 rounded-full animate-pulse"
+                          style={{ animationDelay: "0.6s" }}
+                        ></div>
+                        <span>Supporting Palestine</span>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </section>
       </Reveal>
@@ -510,10 +668,13 @@ const Index = () => {
                     <Sparkles className="h-6 w-6 text-secondary animate-bounce-gentle" />
                   </div>
                   <p className="text-white/90 leading-relaxed">
-                    We are the proud community behind the Nagasaki Islamic
-                    Center, home to the first and only mosque in Nagasaki
-                    Prefecture, Japan. Since opening in April 2024, our mosque
-                    has welcomed Muslims from over 62 nationalities
+                    The Nagasaki Islamic Center took part in this cultural event
+                    to represent the Muslim community, share Islamic traditions,
+                    and promote mutual understanding. Visitors learned about
+                    Islamic beliefs, enjoyed traditional food, and experienced
+                    the beauty of cultural diversity through peaceful dialogue
+                    and hospitality. The event will be held on Monday, December
+                    14, from 11:00 AM to 4:00 PM.
                   </p>
                 </div>
               </Reveal>
