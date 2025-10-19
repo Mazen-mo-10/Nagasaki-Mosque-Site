@@ -258,12 +258,12 @@ const Boycott = () => {
             onValueChange={setActiveCategory}
             className="animate-fade-in"
           >
-            <TabsList className="grid w-full grid-cols-4 mb-8">
+            {/* <TabsList className="grid w-full grid-cols-4 mb-8">
               <TabsTrigger value="all">All Companies</TabsTrigger>
               <TabsTrigger value="direct">Direct Support</TabsTrigger>
               <TabsTrigger value="parent">Parent Companies</TabsTrigger>
               <TabsTrigger value="japan">In Japan</TabsTrigger>
-            </TabsList>
+            </TabsList> */}
 
             <TabsContent value="all" className="space-y-6">
               {filteredCompanies.length > 0 ? (
