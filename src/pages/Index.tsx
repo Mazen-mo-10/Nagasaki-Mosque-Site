@@ -280,7 +280,7 @@ const Index = () => {
                           </div>
                           <div>
                             <p className="font-bold text-foreground">
-                              Palestine Support
+                              Support Muslims
                             </p>
                             <p className="text-xs text-muted-foreground">
                               Support Boycott
@@ -340,7 +340,7 @@ const Index = () => {
                           className="w-2 h-2 bg-amber-500 rounded-full animate-pulse"
                           style={{ animationDelay: "0.6s" }}
                         ></div>
-                        <span>Supporting Palestine</span>
+                        <span>Support Muslims</span>
                       </div>
                     </div>
                   </div>
