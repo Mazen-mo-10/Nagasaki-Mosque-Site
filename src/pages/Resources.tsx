@@ -532,10 +532,10 @@ const audioResources = [
     link: "https://www.mp3quran.net/ar/minsh",
   },
   {
-    title: "Mishary Rashid Alafasy",
+    title: "Mahmoud Khalil Al-Hosary",
     description:
-      "Mishary Rashid Alafasy is a Kuwaiti imam and Qur’an reciter, famous for his beautiful voice and heartfelt recitations heard worldwide.",
-    link: "https://quran.com/en/reciters/7",
+      "Mahmoud Khalil Al-Hosary was an Egyptian Qur’an reciter, known for his precise Tajweed and clear, balanced recitation style.",
+    link: "https://surahquran.com/mp3/Al-Hussary/",
   },
 ];
 

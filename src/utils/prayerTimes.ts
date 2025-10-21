@@ -25,6 +25,11 @@ export const getPrayerTimes = (): DailyPrayerTimes => {
       arabic: "الفجر",
     },
     {
+      name: "Shuruq",
+      time: "5:57",
+      arabic: "الشروق",
+    },
+    {
       name: "Dhuhr",
       time: "12:15",
       arabic: "الظهر",

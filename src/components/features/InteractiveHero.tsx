@@ -246,7 +246,7 @@ const InteractiveHero = () => {
                   </span>
                   <Sparkles className="h-5 w-5 text-secondary animate-bounce-gentle" />
                 </div>
-                <p className="text-gray-800 dark:text-white text-sm">
+                <p className="text-gray-900 dark:text-white text-lg font-bold">
                   Participation in the 27th Nagasaki International Festival on
                   Monday, December 14, from 11:00 AM to 4:00 PM.
                 </p>

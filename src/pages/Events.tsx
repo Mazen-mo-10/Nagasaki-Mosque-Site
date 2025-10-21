@@ -44,7 +44,7 @@ const Events = () => {
           {/* Upcoming Events */}
           <div className="space-y-8 animate-fade-in">
             <h2 className="text-4xl font-bold text-center text-foreground">
-              Upcoming Events
+              Our Events
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -74,7 +74,7 @@ const Events = () => {
                             : "secondary"
                         }
                       >
-                        {event.priority === "high" ? "Priority" : "Regular"}
+                        {event.priority === "high" ? "Premium" : "Basic"}
                       </Badge>
                     </div>
                   </CardHeader>

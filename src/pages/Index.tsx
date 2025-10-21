@@ -257,9 +257,8 @@ const Index = () => {
                         </h3>
 
                         <p className="text-muted-foreground leading-relaxed text-lg">
-                          Supporting our brothers and sisters in Palestine with
-                          ethically sourced halal products that align with our
-                          Islamic values and principles.
+                          We support our brothers and sisters in Nagasaki by
+                          providing halal food that is not part of any boycott.
                         </p>
 
                         <div className="bg-gradient-to-r from-emerald-500/10 to-green-500/10 rounded-xl p-4 border border-emerald-200/50 dark:border-emerald-700/30">
@@ -284,7 +283,7 @@ const Index = () => {
                               Palestine Support
                             </p>
                             <p className="text-xs text-muted-foreground">
-                              Ethical sourcing
+                              Support Boycott
                             </p>
                           </div>
                         </div>

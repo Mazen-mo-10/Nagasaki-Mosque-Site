@@ -209,10 +209,10 @@ const FastingInfo = () => {
                           {day.type}
                         </Badge>
                       </div>
-                      <p className="text-sm text-primary font-arabic">
+                      <p className="text-lg text-primary font-arabic">
                         {day.arabicName}
                       </p>
-                      <p className="text-xs text-muted-foreground">
+                      <p className="text-sm text-muted-foreground">
                         {day.date}
                       </p>
                       <p className="text-sm text-muted-foreground">
@@ -235,7 +235,7 @@ const FastingInfo = () => {
               <p className="text-sm font-medium text-foreground">
                 Fasting Etiquette Reminder
               </p>
-              <p className="text-xs text-muted-foreground leading-relaxed">
+              <p className="text-sm text-muted-foreground leading-relaxed">
                 Remember to have the intention (niyyah) for fasting before Fajr,
                 eat suhur (pre-dawn meal), break fast at Maghrib time, and
                 increase in dhikr, Quran recitation, and charitable acts during

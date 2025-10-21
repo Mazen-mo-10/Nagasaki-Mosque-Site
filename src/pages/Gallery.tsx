@@ -239,112 +239,57 @@ const Gallery = () => {
 // Gallery Images Data (In a real app, this would come from a database)
 const galleryImages = [
   {
-    src: "https://img.youtube.com/vi/0U83nfBXTVI/hqdefault.jpg",
-    title: "Inspiring Talk with New Japanese Muslims",
+    src: "https://github.com/Mazen-mo-10/imgs/blob/main/NagImgBen.jpg?raw=true",
+    title: "Our Journey — The Beginning of Nagasaki Mosque",
     description:
-      "A touching meeting with new Japanese Muslims sharing their journey at Islam.",
+      "This is our story from the very beginning — how we came together, founded the mosque, and made the key decisions that shaped our community.",
     category: "videos",
-    date: "2025",
-    videoUrl: "https://youtu.be/0U83nfBXTVI?si=lyUZZEWJHqLxF6-E",
+    date: "2024",
+    videoUrl: "https://www.youtube.com/watch?v=0L9neQ0AJhY",
   },
   {
     src: "https://img.youtube.com/vi/K047EPySyMA/hqdefault.jpg",
     title:
-      "Visit of the Kuwaiti Humanitarian Association Delegation to Nagasaki Central Mosque - Japan",
-
+      "Visit of the Kuwaiti Humanitarian Association Delegation to Nagasaki Central Mosque – Japan",
     description:
-      "Meeting with the Kuwaiti Humanitarian Association delegation at Nagasaki Central Mosque.",
-    category: "events",
-    date: "2025",
+      "A delegation from the Kuwaiti Association for Humanitarian Work visited the Nagasaki Central Mosque in Japan to strengthen cultural and humanitarian ties and explore joint initiatives. :contentReference[oaicite:2]{index=2}",
+    category: "videos",
+    date: "2024",
     videoUrl: "https://youtu.be/K047EPySyMA",
   },
   {
-    src: "https://github.com/Mazen-mo-10/Nagasaki-Mosque-Site/blob/main/src/assets/VidSh.jpg?raw=true",
-    title: "Visit of the Kuwaiti Humanitarian Association Delegation",
+    src: "https://github.com/Mazen-mo-10/imgs/blob/main/NagImgJoe.jpg?raw=true",
+    title: "Yusuf — The First Muslim in Nagasaki",
     description:
-      "A special visit by the Kuwaiti Humanitarian Association delegation to Nagasaki Central Mosque in Japan.",
+      "A touching story of Yusuf, the first Muslim in Nagasaki, sharing his inspiring journey of faith, discovery, and perseverance. From his first encounter with Islam to becoming a guiding light for others, Yusuf’s story reflects courage, sincerity, and the beauty of embracing truth in a new land.",
     category: "videos",
-    date: "2025",
-    videoUrl: "../assets/videIslamNew.mp4",
+    date: "2024",
+    videoUrl:
+      "https://www.instagram.com/reel/DIlT2u2tVKf/?igsh=a2dvcHoxcDBsbW1l",
   },
   {
-    src: "https://github.com/Mazen-mo-10/imgs/blob/main/pic1.jpg?raw=true",
-    title: "Kuwait Society visit to the mosque",
+    src: "https://github.com/Mazen-mo-10/imgs/blob/main/NagImgoff.jpeg?raw=true",
+    title: "photo with Japanese Government — Nagasaki Mosque",
     description:
-      "A delegation from the Kuwaiti Society visited our mosque and were impressed by the development in this period.",
-    category: "prayers",
-    date: "March 2025",
+      "A memorable moment at our mosque in Nagasaki, where our multicultural community gathered together with Japanese government representatives to celebrate unity and faith.",
+    category: "community",
+    date: "March 2024",
+  },
+  {
+    src: "https://github.com/Mazen-mo-10/imgs/blob/main/NagImggor.jpeg?raw=true",
+    title: "Featured in a Japanese Newspaper — Nagasaki Mosque",
+    description:
+      "A proud moment for our community as our story and efforts were featured in a Japanese newspaper, highlighting our growth and cultural connection.",
+    category: "news",
+    date: "March 2024",
   },
   {
     src: "https://github.com/Mazen-mo-10/imgs/blob/main/pic2.JPG?raw=true",
     title: "Community Gathering before we had our beloved mosque now",
     description:
       "A special day where mosque members come together for prayer, discussions, and strengthening brotherhood.",
-    category: "celebrations",
+    category: "community",
     date: "April 2024",
-  },
-  {
-    src: "https://github.com/Mazen-mo-10/Nagasaki-Mosque-Site/blob/main/src/assets/Picture%202.jpg?raw=true",
-    title: "Mosque Architecture",
-    description: "Beautiful Islamic architectural details of our prayer hall",
-    category: "architecture",
-    date: "February 2024",
-  },
-  {
-    src: "https://github.com/Mazen-mo-10/imgs/blob/main/pic4.JPG?raw=true",
-    title: "Community Iftar Gathering",
-    description:
-      "Mosque members sharing a blessed iftar meal together during Ramadan.",
-    category: "community",
-    date: "January 2025",
-  },
-  {
-    src: "https://github.com/Mazen-mo-10/imgs/blob/main/pic5.JPG?raw=true",
-    title: "Mosque Gathering",
-    description:
-      "Community members gathering inside the mosque and capturing a memorable group photo together.",
-    category: "events",
-    date: "March 2025",
-  },
-  {
-    src: "https://github.com/Mazen-mo-10/imgs/blob/main/pic6.jpeg?raw=true",
-    title: "Special Visit",
-    description:
-      "Honored gathering with a respected Sheikh and distinguished guests at the mosque.",
-    category: "prayers",
-    date: "January 2025",
-  },
-  {
-    src: "https://github.com/Mazen-mo-10/Nagasaki-Mosque-Site/blob/main/src/assets/PicTM.png?raw=true",
-    title: "Grand Celebration",
-    description:
-      "A major festive gathering at Nagasaki Mosque with international guests and visitors from outside the city.",
-    category: "celebrations",
-    date: "2024",
-  },
-  {
-    src: "https://github.com/Mazen-mo-10/Nagasaki-Mosque-Site/blob/main/src/assets/PicYE.png?raw=true",
-    title: "Cultural Food Festival",
-    description:
-      "A vibrant food gathering at Nagasaki Mosque showcasing dishes from diverse cultures and traditions.",
-    category: "community",
-    date: "2024",
-  },
-  {
-    src: "https://github.com/Mazen-mo-10/Nagasaki-Mosque-Site/blob/main/src/assets/PictwoSandH.jpg?raw=true",
-    title: "Young Visitors in Hijab",
-    description:
-      "Two young girls wearing hijab experiencing the beauty of Japanese Muslim traditions at Nagasaki Mosque.",
-    category: "culture",
-    date: "2024",
-  },
-  {
-    src: "https://github.com/Mazen-mo-10/imgs/blob/main/nag2.jpeg?raw=true",
-    title: "Youth Gathering After Prayer",
-    description:
-      "Young members of the mosque gathering together in brotherhood after completing the prayer in spiritual unity.",
-    category: "community",
-    date: "February 2025",
   },
   {
     src: "https://github.com/Mazen-mo-10/imgs/blob/main/nag4.jpeg?raw=true",
@@ -355,12 +300,68 @@ const galleryImages = [
     date: "March 2024",
   },
   {
+    src: "https://github.com/Mazen-mo-10/imgs/blob/main/NagImgfetr.jpeg?raw=true",
+    title: "Community Iftar Gathering",
+    description:
+      "Mosque members sharing a blessed iftar meal together during Ramadan.",
+    category: "celebrations",
+    date: "January 2024",
+  },
+  {
+    src: "https://github.com/Mazen-mo-10/imgs/blob/main/pic6.jpeg?raw=true",
+    title: "Special Visit",
+    description:
+      "Honored gathering with a respected Sheikh and distinguished guests at the mosque.",
+    category: "events",
+    date: "January 2024",
+  },
+  {
+    src: "https://github.com/Mazen-mo-10/Nagasaki-Mosque-Site/blob/main/src/assets/PicTM.png?raw=true",
+    title: "Participation in the 27th Nagasaki International Festival",
+    description:
+      "Our team from Nagasaki Mosque joined the 27th Nagasaki International Festival — an opportunity to connect, learn, and share with a diverse global community.",
+    category: "events",
+    date: "2024",
+  },
+  {
+    src: "https://github.com/Mazen-mo-10/Nagasaki-Mosque-Site/blob/main/src/assets/PicYE.png?raw=true",
+    title:
+      "Cultural Activities and Halal Food — 27th Nagasaki International Festival",
+    description:
+      "A vibrant scene from the 27th Nagasaki International Festival, showcasing halal food, cultural exchange, and the joyful spirit of unity among people from different backgrounds.",
+    category: "events",
+    date: "2024",
+  },
+  {
+    src: "https://github.com/Mazen-mo-10/Nagasaki-Mosque-Site/blob/main/src/assets/PictwoSandH.jpg?raw=true",
+    title: "Young Visitors in Hijab in 27th Nagasaki International Festival",
+    description:
+      "Two young girls wearing hijab experiencing the beauty of Japanese Muslim traditions at the 27th Nagasaki International Festival.",
+    category: "events",
+    date: "2024",
+  },
+  {
+    src: "https://github.com/Mazen-mo-10/imgs/blob/main/NagImgLec.jpeg?raw=true",
+    title: "Introducing Islam — Open Lecture at Nagasaki Mosque",
+    description:
+      "An open lecture held at Nagasaki Mosque, where non-Muslim guests learned about Islam alongside our mosque members — a day of sharing, understanding, and meaningful dialogue.",
+    category: "community",
+    date: "February 2024",
+  },
+  {
+    src: "https://github.com/Mazen-mo-10/Nagasaki-Mosque-Site/blob/main/src/assets/Picture%202.jpg?raw=true",
+    title: "Mosque Architecture",
+    description: "Beautiful Islamic architectural details of our prayer hall",
+    category: "architecture",
+    date: "February 2024",
+  },
+  {
     src: "https://github.com/Mazen-mo-10/imgs/blob/main/nag6.jpeg?raw=true",
     title: "Friday Sermon",
     description:
       "The Imam delivering the weekly Friday Khutbah to the congregation, sharing Islamic knowledge and guidance.",
     category: "prayers",
-    date: "April 2025",
+    date: "April 2024",
   },
 ];
 
