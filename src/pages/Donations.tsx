@@ -28,7 +28,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Progress } from "@/components/ui/progress";
 import { Separator } from "@/components/ui/separator";
 import { Link } from "react-router-dom";
 const Donations = () => {
@@ -199,7 +198,7 @@ const Donations = () => {
                     <p>New Muslims guided to Islam in the past year</p>
                   </div>
                   <div className="text-center p-4 bg-white/10 rounded-lg">
-                    <div className="text-3xl font-bold mb-2">3+</div>
+                    <div className="text-3xl font-bold mb-2">8+</div>
                     <p>
                       Years needed to establish this mosque against all odds
                     </p>
