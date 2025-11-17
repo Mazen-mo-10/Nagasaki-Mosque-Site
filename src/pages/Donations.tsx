@@ -30,9 +30,8 @@ import {
 } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Separator } from "@/components/ui/separator";
-
+import { Link } from "react-router-dom";
 const Donations = () => {
-  const [animatedValue, setAnimatedValue] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -41,30 +40,6 @@ const Donations = () => {
     }, 300);
     return () => clearTimeout(timer);
   }, []);
-
-  useEffect(() => {
-    if (isVisible) {
-      const interval = setInterval(() => {
-        setAnimatedValue((prev) => {
-          if (prev >= 1250000) {
-            clearInterval(interval);
-            return 1250000;
-          }
-          return prev + 25000;
-        });
-      }, 20);
-      return () => clearInterval(interval);
-    }
-  }, [isVisible]);
-
-  const formatCurrency = (amount) => {
-    return new Intl.NumberFormat("en-US", {
-      style: "currency",
-      currency: "USD",
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 0,
-    }).format(amount);
-  };
 
   return (
     <div className="min-h-screen">
@@ -87,16 +62,16 @@ const Donations = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8 animate-slide-up">
-            <Button
+            {/* <Button
               size="lg"
               className="bg-amber-500 hover:bg-amber-400 text-emerald-900 font-semibold"
               onClick={() =>
-                document.getElementById("donate-section").scrollIntoView()
+                document.getElementById("contact-section").scrollIntoView()
               }
             >
               <Heart className="mr-2 h-5 w-5" />
               Donate Now
-            </Button>
+            </Button> */}
             <Button
               size="lg"
               variant="outline"
@@ -180,14 +155,6 @@ const Donations = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="mb-4">
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="font-medium">Facilities Utilization</span>
-                    <span className="text-sm font-semibold">0% Complete</span>
-                  </div>
-                  <Progress value={0} className="h-2" />
-                </div>
-
                 <ul className="space-y-3 mt-4">
                   <li className="flex items-start">
                     <div className="bg-emerald-100 dark:bg-emerald-900/30 rounded-full p-1 mr-3 mt-0.5">
@@ -201,22 +168,14 @@ const Donations = () => {
                     <div className="bg-emerald-100 dark:bg-emerald-900/30 rounded-full p-1 mr-3 mt-0.5">
                       <ArrowRight className="h-4 w-4 text-emerald-600" />
                     </div>
-                    <span>Create proper facilities for wudu and restrooms</span>
+                    <span>Adding some basic items to the mosque</span>
                   </li>
                   <li className="flex items-start">
                     <div className="bg-emerald-100 dark:bg-emerald-900/30 rounded-full p-1 mr-3 mt-0.5">
                       <ArrowRight className="h-4 w-4 text-emerald-600" />
                     </div>
                     <span>
-                      Build a library and resource center for Islamic materials
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <div className="bg-emerald-100 dark:bg-emerald-900/30 rounded-full p-1 mr-3 mt-0.5">
-                      <ArrowRight className="h-4 w-4 text-emerald-600" />
-                    </div>
-                    <span>
-                      Develop a community kitchen for events and gatherings
+                      Establishing a halal market for Muslims in Nagasaki
                     </span>
                   </li>
                 </ul>
@@ -232,15 +191,15 @@ const Donations = () => {
               <CardContent>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   <div className="text-center p-4 bg-white/10 rounded-lg">
-                    <div className="text-3xl font-bold mb-2">100+</div>
+                    <div className="text-3xl font-bold mb-2">280+</div>
                     <p>Muslims currently benefiting from our mosque</p>
                   </div>
                   <div className="text-center p-4 bg-white/10 rounded-lg">
-                    <div className="text-3xl font-bold mb-2">15+</div>
+                    <div className="text-3xl font-bold mb-2">2+</div>
                     <p>New Muslims guided to Islam in the past year</p>
                   </div>
                   <div className="text-center p-4 bg-white/10 rounded-lg">
-                    <div className="text-3xl font-bold mb-2">15+</div>
+                    <div className="text-3xl font-bold mb-2">3+</div>
                     <p>
                       Years needed to establish this mosque against all odds
                     </p>
@@ -255,6 +214,12 @@ const Donations = () => {
                     Allah is like a seed which grows seven spikes, in each spike
                     is a hundred grains..."
                   </p>
+                  <p className="mt-4 text-xl font-arabic leading-loose">
+                    ﴿مَّثَلُ ٱلَّذِينَ يُنفِقُونَ أَمۡوَٰلَهُمۡ فِي سَبِيلِ
+                    ٱللَّهِ كَمَثَلِ حَبَّةٍ أَنۢبَتَتۡ سَبۡعَ سَنَابِلَ فِي
+                    كُلِّ سُنۢبُلَةٖ مِّاْئَةُ حَبَّةٖۗ وَٱللَّهُ يُضَٰعِفُ
+                    لِمَن يَشَآءُۚ وَٱللَّهُ وَٰسِعٌ عَلِيمٌ﴾
+                  </p>
                   <p className="mt-2 text-sm opacity-80">
                     Surah Al-Baqarah (2:261)
                   </p>
@@ -265,16 +230,15 @@ const Donations = () => {
         </div>
       </section>
 
-      {/* Progress Section */}
+      {/* Goal Section */}
       <section className="py-16 px-4 bg-white dark:bg-gray-900">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12 animate-fade-in">
             <h2 className="text-4xl font-bold text-foreground mb-4">
-              Campaign Progress
+              Our Goal
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Help us reach our goal to hire a full-time imam before Ramadan
-              2026
+              We aim to bring a full-time imam before Ramadan 2026
             </p>
           </div>
 
@@ -282,7 +246,7 @@ const Donations = () => {
             <CardHeader>
               <CardTitle className="flex items-center text-emerald-800 dark:text-emerald-300">
                 <Target className="h-5 w-5 mr-2" />
-                Fundraising Goal: {formatCurrency(45000)}
+                Our Goal: Hire a Full-Time Imam
               </CardTitle>
               <CardDescription>
                 We aim to raise funds to support our mosque and hire a full-time
@@ -291,53 +255,45 @@ const Donations = () => {
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
-                <div className="flex justify-between items-center">
-                  <span className="font-medium">Raised so far:</span>
-                  <span className="text-2xl font-bold text-emerald-700 dark:text-emerald-300">
-                    0
-                  </span>
-                </div>
-                <Progress
-                  value={(animatedValue / 1250000) * 100}
-                  className="h-4"
-                />
-                <div className="flex justify-between items-center text-sm text-muted-foreground">
-                  <span>{0}% complete</span>
-                  <span>45,000$ needed</span>
-                </div>
-              </div>
-
-              <Separator className="my-6" />
-
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
-                <div className="text-center">
-                  <div className="bg-emerald-100 dark:bg-emerald-900/30 p-3 rounded-full w-fit mx-auto">
-                    <Users className="h-6 w-6 text-emerald-600 mx-auto" />
-                  </div>
-                  <h3 className="font-semibold mt-2">40+ Nationalities</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Served by our mosque
+                <div className="text-center py-4">
+                  <p className="text-lg text-muted-foreground">
+                    We welcome your generous contributions to support our mosque
+                    and appoint an imam to serve our community
                   </p>
                 </div>
 
-                <div className="text-center">
-                  <div className="bg-amber-100 dark:bg-amber-900/30 p-3 rounded-full w-fit mx-auto">
-                    <Calendar className="h-6 w-6 text-amber-600 mx-auto" />
-                  </div>
-                  <h3 className="font-semibold mt-2">Before Ramadan 2026</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Target for imam arrival
-                  </p>
-                </div>
+                <Separator className="my-6" />
 
-                <div className="text-center">
-                  <div className="bg-blue-100 dark:bg-blue-900/30 p-3 rounded-full w-fit mx-auto">
-                    <BookOpen className="h-6 w-6 text-blue-600 mx-auto" />
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+                  <div className="text-center">
+                    <div className="bg-emerald-100 dark:bg-emerald-900/30 p-3 rounded-full w-fit mx-auto">
+                      <Users className="h-6 w-6 text-emerald-600 mx-auto" />
+                    </div>
+                    <h3 className="font-semibold mt-2">10+ Nationalities</h3>
+                    <p className="text-sm text-muted-foreground">
+                      Served by our mosque
+                    </p>
                   </div>
-                  <h3 className="font-semibold mt-2">Weekly Programs</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Quran classes, halaqahs, more
-                  </p>
+
+                  <div className="text-center">
+                    <div className="bg-amber-100 dark:bg-amber-900/30 p-3 rounded-full w-fit mx-auto">
+                      <Calendar className="h-6 w-6 text-amber-600 mx-auto" />
+                    </div>
+                    <h3 className="font-semibold mt-2">Before Ramadan 2026</h3>
+                    <p className="text-sm text-muted-foreground">
+                      Target for imam arrival
+                    </p>
+                  </div>
+
+                  <div className="text-center">
+                    <div className="bg-blue-100 dark:bg-blue-900/30 p-3 rounded-full w-fit mx-auto">
+                      <BookOpen className="h-6 w-6 text-blue-600 mx-auto" />
+                    </div>
+                    <h3 className="font-semibold mt-2">Weekly Programs</h3>
+                    <p className="text-sm text-muted-foreground">
+                      Quran classes, halaqahs, more
+                    </p>
+                  </div>
                 </div>
               </div>
             </CardContent>
@@ -353,7 +309,7 @@ const Donations = () => {
               Our Story
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              The journey of Nagasaki's first and only mosque
+              The journey of Nagasaki's first mosque
             </p>
           </div>
 
@@ -362,15 +318,14 @@ const Donations = () => {
               <CardHeader>
                 <CardTitle className="flex items-center">
                   <Sparkles className="h-5 w-5 mr-2 text-amber-500" />
-                  Eight Years of Perseverance
+                  Three Years of Perseverance
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Thanks to the generous support of Muslims worldwide—especially
-                  our brothers and sisters in Kuwait—we transformed an old
-                  building into a beautiful mosque. Alhamdulillah, our dream
-                  came true in April 2025.
+                  Thanks to the generous support of Muslims around the world, an
+                  old building was transformed into a beautiful mosque. Praise
+                  be to God, our dream came true in April 2025.
                 </p>
               </CardContent>
             </Card>
@@ -400,11 +355,12 @@ const Donations = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  In June 2024, Yusuf, a Japanese professor and former Christian
-                  pastor, embraced Islam at our mosque after decades of
+                  Yusuf's Transformation In June 2024, Yusuf, a Japanese
+                  professor , embraced Islam at our mosque after decades of
                   searching for truth. His journey reminds us why this mosque
                   matters—it's a place where hearts are guided and lives are
-                  changed.
+                  changed. "Just like the life of Prophet Yusuf was in God's
+                  plan, so too is mine, insha Allah." — Yusuf
                 </p>
                 <blockquote className="mt-4 pl-4 border-l-4 border-emerald-500 italic text-emerald-700 dark:text-emerald-300">
                   "Just like the life of Prophet Yusuf was in God's plan, so too
@@ -416,9 +372,9 @@ const Donations = () => {
         </div>
       </section>
 
-      {/* Donation Section */}
+      {/* Contact Section */}
       <section
-        id="donate-section"
+        id="contact-section"
         className="py-16 px-4 bg-white dark:bg-gray-900"
       >
         <div className="container mx-auto max-w-4xl">
@@ -438,25 +394,27 @@ const Donations = () => {
                   Support Our Mission
                 </CardTitle>
                 <CardDescription className="text-muted-foreground">
-                  Click the button below to make a donation through our secure
-                  payment portal
+                  To make a donation, please contact us directly to arrange your
+                  contribution
                 </CardDescription>
               </CardHeader>
 
               <CardContent className="w-full space-y-4">
                 <Button
                   className="w-full bg-emerald-600 hover:bg-emerald-700 h-12 text-lg"
-                  onClick={() =>
-                    window.open("https://example-donation-site.com", "_blank")
-                  }
+                  asChild // <-- 2. دي هي الإضافة السحرية
                 >
-                  <Heart className="mr-2 h-5 w-5" />
-                  Donate Now
+                  <Link to="/contact">
+                    {" "}
+                    {/* 3. استخدم Link هنا وشيل الـ onClick */}
+                    <Mail className="mr-2 h-5 w-5" />
+                    Contact Us to Donate
+                  </Link>
                 </Button>
 
                 <p className="text-xs text-muted-foreground">
-                  You will be redirected to our secure donation portal. We
-                  accept various payment methods.
+                  We'll be happy to guide you through the available donation
+                  methods to support our mosque
                 </p>
               </CardContent>
             </Card>
@@ -578,25 +536,23 @@ const Donations = () => {
             Nagasaki—for today and for generations to come.
           </p>
 
-          <div className="animate-fade-in">
+          {/* <div className="animate-fade-in">
             <Button
               size="lg"
               className="bg-amber-500 hover:bg-amber-400 text-emerald-900 font-semibold mr-4"
-              onClick={() =>
-                window.open("https://example-donation-site.com", "_blank")
-              }
+              onClick={() => (window.location.href = "/contact")}
             >
               <Heart className="mr-2 h-5 w-5" />
               Donate Now
             </Button>
-          </div>
+          </div> */}
 
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 animate-fade-in">
-            <div className="space-y-2">
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 animate-fade-in">
+            {/* <div className="space-y-2">
               <Globe className="h-8 w-8 text-amber-300 mx-auto" />
               <h3 className="font-semibold">Visit Our Website</h3>
               <p className="text-sm text-white/90">nagasakiislamiccenter.com</p>
-            </div>
+            </div> */}
 
             <div className="space-y-2">
               <Mail className="h-8 w-8 text-amber-300 mx-auto" />
