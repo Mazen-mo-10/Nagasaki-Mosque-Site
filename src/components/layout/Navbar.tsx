@@ -13,7 +13,7 @@ const Navbar = () => {
 
   // Navigation links
   const navLinks = [
-    { path: "/Nagasaki-Mosque-Site", label: "Home" },
+    { path: "/", label: "Home" },
     { path: "/about", label: "About" },
     { path: "/prayer-times", label: "Prayer Times" },
     { path: "/events", label: "Events" },
@@ -38,7 +38,7 @@ const Navbar = () => {
           <div className="flex items-center justify-between h-16">
             {/* Logo and Brand */}
             <Link
-              to="/Nagasaki-Mosque-Site"
+              to="/"
               className="flex items-center space-x-3 transition-smooth hover:scale-105"
             >
               <div className="bg-gradient-islamic p-2 rounded-lg shadow-gold flex items-center justify-center">

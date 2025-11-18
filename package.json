@@ -1,6 +1,5 @@
 {
   "name": "nagasaki",
-  "homepage": "https://mazen-mo-10.github.io/Nagasaki-Mosque-Site/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,9 +8,7 @@
     "build": "vite build",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
