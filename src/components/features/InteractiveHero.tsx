@@ -84,7 +84,7 @@ const InteractiveHero = () => {
             }`}
           >
             {/* Greeting with Current Islamic Date */}
-            <div className="space-y-3">
+            <div className="space-y-3 py-8">
               <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm hover-lift card-interactive rounded-full px-4 py-2 animate-glow">
                 <Calendar className="h-4 w-4 text-secondary" />
                 {islamicInfo && islamicInfo.hijri ? (
