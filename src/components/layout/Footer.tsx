@@ -18,7 +18,7 @@ const Footer = () => {
           {/* Mosque Information */}
           <div className="space-y-4 flex flex-col items-center md:items-start">
             <Link
-              to="/Nagasaki-Mosque-Site"
+              to="/"
               className="flex items-center space-x-3 transition-smooth hover:scale-105 mx-auto md:mx-0"
             >
               <div className="bg-gradient-islamic p-2 rounded-lg shadow-gold flex items-center justify-center">
