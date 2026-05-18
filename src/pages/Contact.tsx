@@ -92,7 +92,7 @@ const Contact = () => {
                   </CardHeader>
                   <CardContent>
                     <p className="text-foreground font-semibold">
-                      +(81) 070-8338-4137
+                      080-5216-1966
                     </p>
                     <p className="text-muted-foreground text-sm">
                       Available during office hours
@@ -306,7 +306,7 @@ const Contact = () => {
               </p>
               <div className="space-y-2">
                 <p className="text-xl font-bold text-secondary">
-                  +(81) 070-8338-4137
+                  080-5216-1966
                 </p>
                 <p className="text-sm text-white/80">
                   Available 24/7 for community members

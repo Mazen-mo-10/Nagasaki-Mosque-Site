@@ -105,7 +105,7 @@ const Footer = () => {
               <div className="flex items-center space-x-3 justify-center md:justify-start">
                 <Phone className="h-5 w-5 text-secondary" />
                 <p className="text-sm hover:text-secondary transition-smooth">
-                  +(81) 070-8338-4137
+                  080-5216-1966
                 </p>
               </div>
 
