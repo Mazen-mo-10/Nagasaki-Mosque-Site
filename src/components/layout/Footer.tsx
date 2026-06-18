@@ -102,12 +102,12 @@ const Footer = () => {
                 </div>
               </div>
 
-              <div className="flex items-center space-x-3 justify-center md:justify-start">
+              {/* <div className="flex items-center space-x-3 justify-center md:justify-start">
                 <Phone className="h-5 w-5 text-secondary" />
                 <p className="text-sm hover:text-secondary transition-smooth">
                   080-5216-1966
                 </p>
-              </div>
+              </div> */}
 
               <div className="flex items-center space-x-3 justify-center md:justify-start">
                 <Mail className="h-5 w-5 text-secondary" />

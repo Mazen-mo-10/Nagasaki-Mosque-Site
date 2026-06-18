@@ -81,7 +81,7 @@ const Contact = () => {
                 </Card>
 
                 {/* Phone */}
-                <Card className="hover:shadow-islamic transition-smooth">
+                {/* <Card className="hover:shadow-islamic transition-smooth">
                   <CardHeader>
                     <CardTitle className="flex items-center space-x-3">
                       <div className="bg-secondary/10 p-2 rounded-lg">
@@ -98,7 +98,7 @@ const Contact = () => {
                       Available during office hours
                     </p>
                   </CardContent>
-                </Card>
+                </Card> */}
 
                 {/* Email */}
 
@@ -305,9 +305,9 @@ const Contact = () => {
                 guidance
               </p>
               <div className="space-y-2">
-                <p className="text-xl font-bold text-secondary">
+                {/* <p className="text-xl font-bold text-secondary">
                   080-5216-1966
-                </p>
+                </p> */}
                 <p className="text-sm text-white/80">
                   Available 24/7 for community members
                 </p>
